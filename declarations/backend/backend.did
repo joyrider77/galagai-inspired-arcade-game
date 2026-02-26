@@ -1,0 +1,109 @@
+type Time = int;
+type SpaceshipDesign = 
+ record {
+   color: text;
+   description: text;
+   effects: text;
+   id: text;
+   name: text;
+   shape: text;
+   unlockCondition: text;
+   unlocked: bool;
+ };
+type ScoreEntry = 
+ record {
+   difficulty: text;
+   level: int;
+   score: int;
+   timestamp: Time;
+ };
+type PowerUp = 
+ record {
+   active: bool;
+   description: text;
+   duration: nat;
+   effect: text;
+   id: text;
+   name: text;
+   timestamp: opt Time;
+ };
+type PlayerPowerUps = 
+ record {
+   activePowerUps: vec PowerUp;
+   name: text;
+ };
+type PlayerDesigns = 
+ record {
+   name: text;
+   selectedDesign: text;
+   unlockedDesigns: vec SpaceshipDesign;
+ };
+type PlayerAchievements = 
+ record {
+   achievements: vec Achievement;
+   defeatedBossTypes: vec text;
+   name: text;
+ };
+type FileReference = 
+ record {
+   hash: text;
+   path: text;
+ };
+type Achievement = 
+ record {
+   category: text;
+   description: text;
+   id: text;
+   name: text;
+   progress: nat;
+   rarity: text;
+   target: nat;
+   timestamp: opt Time;
+   unlocked: bool;
+ };
+service : {
+  activatePowerUp: (name: text, powerUpId: text) -> (bool);
+  addScore: (name: text, score: int, difficulty: text, level: int) -> (bool);
+  checkAndUnlockDesigns: (name: text) -> (bool);
+  deactivatePowerUp: (name: text, powerUpId: text) -> (bool);
+  deleteScore: (name: text) -> (bool);
+  dropFileReference: (path: text) -> ();
+  getAchievements: (name: text) -> (opt PlayerAchievements) query;
+  getActivePowerUps: (name: text) -> (opt vec PowerUp) query;
+  getAllAchievements: () -> (vec PlayerAchievements) query;
+  getAllDesigns: () -> (vec PlayerDesigns) query;
+  getAllPowerUps: () -> (vec PlayerPowerUps) query;
+  getAllScores: () -> (vec record {
+                             text;
+                             ScoreEntry;
+                           }) query;
+  getDesigns: (name: text) -> (opt PlayerDesigns) query;
+  getFileReference: (path: text) -> (FileReference) query;
+  getScoresByDifficulty: (difficulty: text) ->
+   (vec record {
+          text;
+          ScoreEntry;
+        }) query;
+  getScoresByName: (name: text) -> (vec record {
+                                          text;
+                                          ScoreEntry;
+                                        }) query;
+  getSelectedDesign: (name: text) -> (opt text) query;
+  getTopScores: (limit: nat) -> (vec record {
+                                       text;
+                                       ScoreEntry;
+                                     }) query;
+  initializeAchievements: (name: text) -> (bool);
+  initializeDesigns: (name: text) -> (bool);
+  initializePowerUps: (name: text) -> (bool);
+  listFileReferences: () -> (vec FileReference) query;
+  registerFileReference: (path: text, hash: text) -> ();
+  selectDesign: (name: text, designId: text) -> (bool);
+  unlockDesign: (name: text, designId: text) -> (bool);
+  updateAchievement: (name: text, achievementId: text, progress: nat) ->
+   (bool);
+  updateBossMasterAchievement: (name: text, bossType: text) -> (bool);
+  updateMagnetMasterAchievement: (name: text, magnetCount: nat) -> (bool);
+  updateScore: (name: text, newScore: int, newDifficulty: text, newLevel:
+   int) -> (bool);
+}

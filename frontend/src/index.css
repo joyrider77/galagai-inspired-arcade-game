@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root container with transparent background to show universal background */
+#root {
+  background: transparent;
+}
+
+/* Universal background image system - applied to body with scroll attachment for iOS compatibility */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url('/assets/IMG_0380.jpeg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  min-height: 100vh;
+  overflow: auto;
+  /* Ensure background is always visible on iOS */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+/* Lighter overlay for enhanced background visibility during gameplay and across all pages */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure all content is above the overlay */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fixed viewport layout - prevents scrolling on mobile and desktop */
+html, body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overscroll-behavior: none;
+}
+
+/* Prevent scrolling on the root element during game */
+#root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+/* Arcade-style glow effect for title */
+.glow {
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.8),
+               0 0 20px rgba(34, 211, 238, 0.6),
+               0 0 30px rgba(34, 211, 238, 0.4);
+}
+
+/* Arcade button style */
+.arcade-button {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.arcade-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+.arcade-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Achievement tile pulse animation */
+@keyframes achievement-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(236, 72, 153, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4), 0 0 20px 5px rgba(236, 72, 153, 0.4);
+  }
+}
+
+.achievement-pulse {
+  animation: achievement-pulse 2s ease-in-out infinite;
+}
+
+/* Pulsating star animation for mobile devices */
+@keyframes star-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.star {
+  animation: star-pulse var(--pulse-duration, 2s) ease-in-out infinite;
+  animation-delay: var(--pulse-delay, 0s);
+}
+
+/* Mobile-optimized game controls */
+.game-control-button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+/* Prevent text selection on control buttons */
+.game-control-button * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Achievement notification banner styles */
+.achievement-notification {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.9) 0%, rgba(219, 39, 119, 0.9) 100%);
+  border: 2px solid rgba(236, 72, 153, 1);
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.5);
+  animation: slideInFromTop 0.5s ease-out;
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Scrollable content for Features and Achievements pages */
+.scrollable-content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(100vh - 120px);
+}
+
+/* Custom scrollbar styling */
+.scrollable-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: rgba(34, 211, 238, 0.5);
+  border-radius: 4px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.7);
+}
+
+/* OKLCH Color System */
+@layer base {
+  :root {
+    --background: oklch(0.98 0 0);
+    --foreground: oklch(0.15 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.15 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.15 0 0);
+    --primary: oklch(0.45 0.25 264);
+    --primary-foreground: oklch(0.98 0 0);
+    --secondary: oklch(0.96 0.01 264);
+    --secondary-foreground: oklch(0.15 0 0);
+    --muted: oklch(0.96 0.01 264);
+    --muted-foreground: oklch(0.45 0.01 264);
+    --accent: oklch(0.96 0.01 264);
+    --accent-foreground: oklch(0.15 0 0);
+    --destructive: oklch(0.58 0.25 29);
+    --destructive-foreground: oklch(0.98 0 0);
+    --border: oklch(0.92 0.01 264);
+    --input: oklch(0.92 0.01 264);
+    --ring: oklch(0.45 0.25 264);
+    --radius: 0.5rem;
+    --chart-1: oklch(0.65 0.25 12);
+    --chart-2: oklch(0.75 0.20 160);
+    --chart-3: oklch(0.55 0.25 0);
+    --chart-4: oklch(0.70 0.20 60);
+    --chart-5: oklch(0.60 0.25 330);
+  }
+
+  .dark {
+    --background: oklch(0.15 0 0);
+    --foreground: oklch(0.98 0 0);
+    --card: oklch(0.15 0 0);
+    --card-foreground: oklch(0.98 0 0);
+    --popover: oklch(0.15 0 0);
+    --popover-foreground: oklch(0.98 0 0);
+    --primary: oklch(0.98 0 0);
+    --primary-foreground: oklch(0.15 0 0);
+    --secondary: oklch(0.22 0.01 264);
+    --secondary-foreground: oklch(0.98 0 0);
+    --muted: oklch(0.22 0.01 264);
+    --muted-foreground: oklch(0.65 0.01 264);
+    --accent: oklch(0.22 0.01 264);
+    --accent-foreground: oklch(0.98 0 0);
+    --destructive: oklch(0.45 0.25 29);
+    --destructive-foreground: oklch(0.98 0 0);
+    --border: oklch(0.22 0.01 264);
+    --input: oklch(0.22 0.01 264);
+    --ring: oklch(0.83 0.01 264);
+    --chart-1: oklch(0.75 0.20 220);
+    --chart-2: oklch(0.75 0.20 160);
+    --chart-3: oklch(0.65 0.25 30);
+    --chart-4: oklch(0.70 0.20 280);
+    --chart-5: oklch(0.65 0.25 340);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+

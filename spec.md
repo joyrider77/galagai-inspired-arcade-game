@@ -1,0 +1,1256 @@
+# Galagai Inspired Arcade Game
+
+## Overview
+A 2D game that replicates the classic Galaga arcade experience with spaceship movement, enemy waves, shooting mechanics, score tracking, power-ups, and animated visual effects. The application is optimized for smartphone use with touch-friendly controls and features dynamic language selection between German and English. German is the default language for all interface elements. All visible titles, headings, and text in the game display "GALAGAI" instead of "GALAGA" in both menu and all screens in both languages (German and English).
+
+## Critical Build Error Fixes and Asset Management
+- **COMPREHENSIVE ASSET PATH VERIFICATION**: All audio and image asset paths must be thoroughly verified and corrected to ensure proper loading and playback across all components
+- **AUDIO ASSET INTEGRATION**: Verify and fix all references to audio files including "Galaga Game Start.m4a", "Galaga Stage Flag.m4a", "Galaga Shooting.m4a", and "Galaga Enemy flying.m4a" with correct import paths and usage
+- **IMAGE ASSET INTEGRATION**: Verify and fix all references to image assets including boss sprites, power-up icons, control button images, and achievement icons with correct import paths and usage
+- **DUPLICATE AUDIO CODE REMOVAL**: Remove all duplicate, outdated, or conflicting audio references and sound triggers throughout the entire codebase
+- **LEGACY SOUND CLEANUP**: Complete removal of all self-generated or legacy sound effects that conflict with the specified uploaded audio files
+- **ASSET IMPORT OPTIMIZATION**: Ensure all asset imports use correct relative paths and are properly bundled during build process
+- **BUILD ERROR PREVENTION**: Fix all TypeScript errors, missing imports, undefined variables, and compilation issues that prevent successful app creation
+- **DEPLOYMENT OPTIMIZATION**: Optimize code structure and asset loading for smooth deployment without build failures
+
+## Critical Magnet Power-Up Implementation and Bug Fixes
+- **MAGNET POWER-UP SPAWN FIX**: Analyze and fix all bugs preventing the magnet power-up from appearing in the game, including power-up generation logic, spawning probability, visual rendering, and collection mechanics
+- **MAGNET POWER-UP GENERATION VERIFICATION**: Ensure the magnet power-up is properly included in the power-up generation pool and can spawn during normal gameplay conditions with appropriate frequency
+- **MAGNET POWER-UP FUNCTIONALITY**: Magnet power-up that activates a magnetic attraction effect for 8 seconds when collected, automatically attracting all power-ups and coins to the player's spaceship
+- **MAGNET ATTRACTION MECHANICS**: During the 8-second magnet effect, any new power-ups or coins that spawn are immediately attracted to the player's spaceship without requiring manual collection
+- **MAGNET VISUAL EFFECTS**: Distinctive visual effects when magnet power-up is collected, including particle animations, energy fields, or attraction lines showing items being drawn to the player's ship
+- **MAGNET AUDIO FEEDBACK**: Special distinctive sound effect plays when the magnet power-up is collected and when activated, clearly distinguishable from other power-up sounds
+- **MAGNET POWER-UP ICON**: Magnet power-up uses the provided `magnet-powerup-icon-transparent.dim_64x64.png` asset as its visual representation
+- **MAGNET POWER-UP COLOR**: Magnet power-up appears as a red power-up in the game field with distinctive coloring to differentiate it from other power-ups
+- **MAGNET TIMER DISPLAY**: Visual timer or indicator shows the remaining duration of the magnet effect to the player
+- **MAGNET COLLECTION TRACKING**: System tracks power-ups collected through magnet attraction for the "Magnet-Meister" achievement
+- **MAGNET POWER-UP TESTING**: Test and verify that the magnet power-up appears under normal gameplay conditions and functions as described
+
+## Critical Achievement System Implementation and Fixes
+- **COMPREHENSIVE ACHIEVEMENT SYSTEM FIX**: Complete achievement system that tracks and recognizes special player accomplishments throughout gameplay with bulletproof reliability
+- **ACHIEVEMENT TRACKING RELIABILITY**: Achievement system must be thoroughly fixed to ensure all achievements are correctly tracked, unlocked, and displayed both during gameplay and on the Achievements page
+- **REAL-TIME ACHIEVEMENT NOTIFICATIONS**: Achievement unlock notifications appear immediately during gameplay when conditions are met with visual-only feedback as ultra-discreet, minimal single-line banners
+- **ACHIEVEMENT PERSISTENCE**: Unlocked achievements are permanently saved and persist across game sessions for registered users
+- **MANDATORY ACHIEVEMENT TYPES IMPLEMENTATION**:
+  - "Schneller Jäger" / "Fast Hunter": Defeat 15 enemies within 8 seconds
+  - "Erster Boss-Sieg" / "First Boss Victory": Defeat the first boss enemy
+  - "Millionär" / "Millionaire": Reach 1,000,000 points
+  - "Boss-Meister" / "Boss Master": Defeat 5 different boss types
+  - "Überlebenskünstler" / "Survivor": Complete 10 levels without losing a life
+  - "Doppel-Power" / "Double Power": Activate Doppel-Raumschiff mode for the first time
+  - "Sammler" / "Collector": Collect 20 power-ups in a single game session
+  - "Präzisionsschütze" / "Precision Shooter": Achieve 90% hit accuracy in a single level
+  - "Ausdauer-Champion" / "Endurance Champion": Play for 30 minutes in a single session
+  - "Perfektionist" / "Perfectionist": Complete a level without taking any damage
+  - "Magnet-Meister" / "Magnet Master": Collect 10 power-ups using the magnet power-up in a single game session
+- **CRITICAL BOSS MASTER ACHIEVEMENT**: The "Boss-Meister" achievement must be thoroughly implemented with bulletproof tracking of unique boss defeats and reliable unlocking when 5 different boss types are defeated
+- **ACHIEVEMENT PAGE DISPLAY**: All achievements earned during gameplay are immediately reflected on the "Erfolge" (Achievements) page with real-time updates and visual feedback
+- **SESSION ACHIEVEMENT TRACKING**: Achievement system tracks and displays all achievements unlocked during the current game session with clear visual feedback
+- **ACHIEVEMENT AUDIO REMOVAL**: Achievement unlock notifications display only visual notifications without any audio effects or sound feedback
+- **REGISTERED USER ACHIEVEMENT PERSISTENCE**: Achievement progress and unlock status must be reliably saved and restored for registered users across all game sessions
+
+## Critical Hangar Spaceship Unlock System Implementation
+- **HANGAR UNLOCK SYSTEM**: Complete hangar system that unlocks new spaceship designs when specific conditions are met during gameplay
+- **HANGAR UNLOCK CONDITIONS**: Spaceship unlocks are triggered by boss victories, score milestones, achievement completions, and special gameplay accomplishments
+- **HANGAR UNLOCK NOTIFICATIONS**: When hangar unlocks are triggered, prominent visual notifications display the newly unlocked spaceship with celebratory effects
+- **HANGAR UNLOCK PERSISTENCE**: Unlocked spaceships are permanently saved and persist across game sessions for registered users
+- **HANGAR UNLOCK VISIBILITY**: All hangar unlocks earned during gameplay are immediately visible and accessible to the player
+- **HANGAR UNLOCK TRACKING**: System tracks which spaceships have been unlocked and maintains accurate unlock status for each registered user
+- **HANGAR UNLOCK INTEGRATION**: Hangar unlock system is fully integrated with the achievement system and score-based upgrade system
+- **HANGAR UNLOCK TESTING**: Hangar unlock functionality must be thoroughly tested to ensure unlocks are triggered correctly and displayed properly
+
+## Code Quality and Maintainability Requirements
+- **CRITICAL REFACTORING REQUIREMENT**: Complete refactoring of both frontend and backend codebases to improve readability, maintainability, and efficiency without changing existing game behavior or features
+- **COMPONENT MODULARIZATION**: Large components, especially `frontend/src/components/GalagaGame.tsx`, must be broken down into smaller, focused, reusable components with clear separation of concerns
+- **CODE CLEANUP**: Remove all duplicate code, unused imports, obsolete functions, and dead code throughout the entire codebase
+- **NAMING CONVENTIONS**: Improve variable and function naming for clarity and consistency, using descriptive names that clearly indicate purpose and functionality
+- **CONSISTENT FORMATTING**: Apply consistent code formatting, indentation, and styling throughout all files using proper TypeScript/React conventions
+- **COMPREHENSIVE DOCUMENTATION**: Add clear, meaningful comments and documentation for complex logic, especially for game mechanics, audio handling, and state management
+- **ASSET PATH OPTIMIZATION**: Review and optimize all asset paths and references to ensure they are correct, consistent, and use proper import statements
+- **AUDIO INTEGRATION CLEANUP**: Refactor audio system code for better organization, removing any obsolete audio handling code and ensuring clean integration of all audio assets
+- **BACKGROUND IMAGE HANDLING**: Optimize background image handling code for better performance and maintainability while preserving all existing functionality
+- **FRONTEND-BACKEND COMMUNICATION**: Streamline and optimize communication between frontend and backend, ensuring clean API interfaces and proper error handling
+- **TYPE SAFETY**: Improve TypeScript type definitions and ensure proper type safety throughout the codebase
+- **PERFORMANCE OPTIMIZATION**: Optimize code for better performance while maintaining all existing functionality and visual effects
+- **SEPARATION OF CONCERNS**: Clearly separate game logic, UI components, state management, and utility functions into appropriate modules
+- **REUSABLE UTILITIES**: Extract common functionality into reusable utility functions and custom hooks where appropriate
+- **ERROR HANDLING**: Implement comprehensive error handling and logging throughout the application
+- **CONFIGURATION MANAGEMENT**: Centralize configuration values and constants for easier maintenance
+- **TESTING READINESS**: Structure code to be more testable with clear function boundaries and minimal side effects
+- **MOBILE OPTIMIZATION**: Ensure all refactored code maintains optimal mobile performance and responsiveness
+
+## Background Image System
+- **UNIVERSAL BACKGROUND**: The attached image `IMG_0380.jpeg` is used as the background across all pages and screens throughout the entire application including during active gameplay
+- **GAMEPLAY BACKGROUND INTEGRATION**: Background image is clearly visible and prominent during active gameplay while maintaining full game functionality and readability
+- **GUARANTEED VISIBILITY**: Background image must be clearly visible and prominent across the entire application including the game canvas area without being obscured by overlays, content containers, or UI elements
+- **RESPONSIVE BACKGROUND STYLING**: Background image is styled responsively to cover all screen sizes and orientations while maintaining proper aspect ratio and clear visibility
+- **OVERLAY OPTIMIZATION**: Any background overlays, content containers, or UI backgrounds are adjusted to ensure the background image remains clearly visible and not obscured
+- **TRANSPARENCY REQUIREMENTS**: Content containers and overlays use appropriate transparency levels to guarantee the background image is prominently displayed behind all content including during gameplay
+- **VISUAL PRESENCE**: Background image maintains strong visual presence throughout the application including during active gameplay while ensuring all game content, UI elements, and controls remain fully readable and usable
+- **GAMEPLAY AREA PROTECTION**: Background image styling ensures the game field (canvas), control buttons, and info areas remain fully clear, readable, and visually unimpaired during gameplay
+- **CONTRAST PRESERVATION**: Background styling preserves high contrast between the background and all foreground elements including text, buttons, game sprites, and UI components while maintaining background visibility during gameplay
+- **MOBILE OPTIMIZATION**: Background image is optimized for mobile performance and does not impact game speed or responsiveness while remaining clearly visible during gameplay
+- **CANVAS CLARITY**: Game canvas area maintains full visual clarity with the background image positioned behind all gameplay elements without interference but remaining prominently visible during active gameplay
+- **CONTROL VISIBILITY**: All control buttons (movement arrows, fire button) remain clearly visible and easily distinguishable against the background while the background image stays visible during gameplay
+- **INFO AREA CLARITY**: Score, lives, level, and all other game information displays remain fully readable with proper contrast against the background while maintaining background visibility during gameplay
+- **MENU INTEGRATION**: Background image is consistently applied and clearly visible across all menu pages (start page, features, settings, leaderboard, achievements) with appropriate styling for each page's content
+- **VISUAL HIERARCHY**: Background image styling maintains proper visual hierarchy ensuring all interactive elements and important information remain prominently visible while the background remains clearly present during gameplay
+- **ACCESSIBILITY COMPLIANCE**: Background implementation ensures all text and UI elements meet accessibility standards for contrast and readability while maintaining clear background visibility during gameplay
+- **NO OBSCURING**: Background image must never be completely hidden, covered, or made invisible by content overlays, containers, or UI elements including during active gameplay
+- **GAMEPLAY READABILITY**: Background image implementation during gameplay ensures all game elements (player ship, enemies, projectiles, power-ups) remain clearly visible and distinguishable with proper contrast
+- **PERFORMANCE DURING GAMEPLAY**: Background image rendering during gameplay is optimized to maintain smooth game performance without affecting frame rates or responsiveness
+- **CRITICAL LAYERING FIX**: Background image rendering logic in the game component must be properly layered so the background is always rendered behind the playfield, controls, and info areas while remaining clearly visible and unobtrusive
+- **RENDERING ORDER CORRECTION**: Game component rendering order must ensure background image appears behind all game elements but remains prominently visible without interfering with gameplay functionality
+- **VISIBILITY MAINTENANCE**: Background image visibility must be maintained throughout all game states while preserving full readability and usability of all game elements, controls, and UI components
+
+## Fixed Viewport Layout System
+- **CRITICAL LAYOUT REQUIREMENT**: The entire game interface must be fixed edge-to-edge on the screen, preventing any scrolling on mobile and desktop devices
+- **FULL VIEWPORT UTILIZATION**: Game layout occupies the complete viewport height and width without any overflow or scrollbars
+- **IMMOVABLE GAME ELEMENTS**: Game canvas, info bar at the top, and control buttons at the bottom remain fully visible and completely immovable during gameplay
+- **NO SCROLL PREVENTION**: The game interface is designed to prevent any vertical or horizontal scrolling during active gameplay
+- **VIEWPORT CONSTRAINTS**: All game elements are contained within the viewport boundaries with no content extending beyond the visible screen area
+- **FIXED POSITIONING**: Game canvas, top info bar, and bottom control buttons use fixed positioning to remain stationary regardless of device orientation or screen size
+- **RESPONSIVE EDGE-TO-EDGE**: Layout adapts responsively to different screen sizes while maintaining complete edge-to-edge coverage without gaps or overflow
+- **MOBILE VIEWPORT OPTIMIZATION**: Layout specifically optimized for mobile viewports to prevent scrolling issues common on smartphones and tablets
+- **DESKTOP VIEWPORT OPTIMIZATION**: Layout ensures desktop browsers display the game interface without scrollbars or overflow content
+- **CONTENT CONTAINMENT**: All interactive elements, visual effects, and UI components are contained within the fixed viewport boundaries
+- **OVERFLOW PREVENTION**: Layout implementation prevents any content from extending beyond the viewport edges that could trigger scrolling
+- **IMMERSIVE FULLSCREEN EXPERIENCE**: Fixed edge-to-edge layout provides an immersive, fullscreen gaming experience without distracting scrollbars or viewport movement
+
+## Desktop Fullscreen Toggle System
+- **DESKTOP-ONLY FULLSCREEN FEATURE**: Fullscreen toggle button is available exclusively on desktop browsers and is completely hidden on mobile devices
+- **MOBILE DEVICE DETECTION**: Fullscreen toggle system includes proper mobile device detection to ensure the button only appears on desktop browsers
+- **FULLSCREEN TOGGLE BUTTON**: Desktop browsers display a fullscreen toggle button that allows switching between fullscreen and normal window size
+- **ASPECT RATIO PRESERVATION**: Fullscreen mode maintains the correct aspect ratio of the game area without distortion or stretching
+- **SEAMLESS FULLSCREEN TRANSITION**: Fullscreen toggle provides smooth transitions between fullscreen and normal modes without interrupting gameplay
+- **FULLSCREEN API INTEGRATION**: Fullscreen functionality uses the browser's Fullscreen API for proper fullscreen implementation
+- **TOGGLE STATE MANAGEMENT**: Fullscreen toggle button clearly indicates current state (fullscreen or windowed) with appropriate visual feedback
+- **KEYBOARD SHORTCUT SUPPORT**: Fullscreen mode supports standard keyboard shortcuts (F11, Escape) for entering and exiting fullscreen
+- **CROSS-BROWSER COMPATIBILITY**: Fullscreen functionality works reliably across all major desktop browsers including Chrome, Firefox, Safari, and Edge
+- **GAME LAYOUT PRESERVATION**: Fullscreen mode preserves the game's fixed viewport layout system and all UI element positioning
+- **CONTROL ACCESSIBILITY**: All game controls remain fully accessible and functional in both fullscreen and windowed modes
+- **PERFORMANCE OPTIMIZATION**: Fullscreen mode does not impact game performance or frame rates
+- **MOBILE EXCLUSION**: Mobile devices continue to use the existing fixed viewport system without any fullscreen toggle functionality
+- **RESPONSIVE FULLSCREEN**: Fullscreen mode adapts to different desktop screen resolutions while maintaining proper game proportions
+- **EXIT FULLSCREEN HANDLING**: Fullscreen mode includes proper handling for exiting fullscreen via browser controls or keyboard shortcuts
+
+## Audio Control System with Volume Slider
+- **VOLUME SLIDER REPLACEMENT**: Replace the existing audio toggle button with a comprehensive volume slider control
+- **VOLUME RANGE CONTROL**: Volume slider allows precise adjustment of all game audio from 0% (mute) to 100% (full volume)
+- **MUTE/UNMUTE INTEGRATION**: Volume slider includes integrated mute/unmute functionality - setting volume to 0% mutes all audio, any volume above 0% unmutes
+- **VISUAL VOLUME FEEDBACK**: Volume slider provides clear visual feedback showing current volume level with appropriate slider positioning
+- **REAL-TIME VOLUME ADJUSTMENT**: Volume changes take effect immediately without requiring confirmation or page reload
+- **PERSISTENT VOLUME SETTINGS**: Volume level preference is saved and persists across game sessions and page reloads
+- **COMPREHENSIVE AUDIO CONTROL**: Volume slider affects all game audio including sound effects, game start music, stage flag audio, shooting sounds, enemy attack audio, point earning audio, and magnet power-up audio
+- **SLIDER ACCESSIBILITY**: Volume slider is accessible via keyboard navigation and screen readers for accessibility compliance
+- **MOBILE-FRIENDLY SLIDER**: Volume slider is optimized for touch interaction on mobile devices with appropriate sizing and responsiveness
+- **DESKTOP SLIDER OPTIMIZATION**: Volume slider works smoothly with mouse interaction on desktop browsers
+- **VOLUME INDICATOR LABELS**: Volume slider includes clear labels or indicators showing mute (0%) and maximum volume (100%) positions
+- **SMOOTH VOLUME TRANSITIONS**: Volume changes are applied smoothly without audio crackling or abrupt sound level changes
+- **SETTINGS INTEGRATION**: Volume slider is accessible from the settings page (Einstellungen) and maintains consistent state across all access points
+- **AUDIO CONTEXT MANAGEMENT**: Volume control properly manages the Web Audio API context and respects browser autoplay policies
+- **CROSS-BROWSER COMPATIBILITY**: Volume slider functionality works reliably across all supported browsers and devices
+- **PERFORMANCE OPTIMIZATION**: Volume control system is optimized for performance and does not impact gameplay frame rates
+
+## Navigation System Requirements
+- **CRITICAL NAVIGATION FUNCTIONALITY**: All navigation routes must be fully functional and accessible from the main menu (Startseite)
+- **MANDATORY ROUTE ACCESS**: Users must be able to reliably navigate to all main sections: Startseite, Spiel (Game), Bestenliste (Leaderboard), Features, Erfolge (Achievements), and Einstellungen (Settings)
+- **ICON-BASED TILE NAVIGATION**: All icon-based tiles on the Startseite must correctly link to their respective pages without navigation failures
+- **BIDIRECTIONAL NAVIGATION**: Users must be able to navigate both to and from all sections, ensuring no dead ends or broken return paths
+- **FEATURES PAGE ACCESS**: The Features tile must reliably navigate to the dedicated Features page with comprehensive game information
+- **ACHIEVEMENTS PAGE ACCESS**: The Erfolge (Achievements) tile must reliably navigate to the dedicated Achievements page with comprehensive achievement overview
+- **SETTINGS ACCESS**: The Settings tile must reliably navigate to the Einstellungen page with difficulty and language selection options
+- **LEADERBOARD ACCESS**: The Leaderboard tile must reliably navigate to the Bestenliste page displaying top 50 scores
+- **DIRECT GAME START ACCESS**: The Play/Start tile must reliably initiate gameplay directly without showing any intermediate menu screens
+- **STREAMLINED GAME FLOW**: Clicking "Spielen" (Play) on the compact start page takes the user directly into the game without any intermediate menu screens
+- **COMPLETE REMOVAL OF OLD MENU**: The old menu with large tiles is completely removed from the application - no remnants, references, or routing to the old menu system remain
+- **SINGLE NAVIGATION SYSTEM**: Only the new icon-based compact start page navigation is used throughout the application
+- **NO LEGACY MENU ACCESS**: Users cannot access or be redirected to any old menu screens under any circumstances
+- **RETURN NAVIGATION**: All pages must provide reliable navigation back to the main menu (Startseite)
+- **CROSS-PLATFORM COMPATIBILITY**: Navigation must work reliably on both desktop and mobile devices without errors
+- **ERROR PREVENTION**: Navigation system must prevent routing errors, broken links, and inaccessible pages
+- **CONSISTENT ROUTING**: All navigation routes must be consistently accessible throughout the application lifecycle
+- **ROUTE VALIDATION**: Navigation system must validate all routes and provide fallback mechanisms for failed navigation attempts
+- **MOBILE NAVIGATION**: Touch-based navigation must work reliably on smartphones and tablets with proper touch responsiveness
+- **DESKTOP NAVIGATION**: Click-based navigation must work reliably on desktop browsers with proper mouse interaction
+- **NAVIGATION STATE MANAGEMENT**: Application must properly manage navigation state to prevent routing conflicts or inconsistencies
+- **SEAMLESS TRANSITIONS**: Navigation between sections must be smooth and immediate without loading delays or broken states
+- **COMPREHENSIVE TESTING**: Navigation system must be thoroughly tested to ensure all routes work as intended across all supported platforms
+
+## Start Page Interface Design
+- Compact start page layout with smaller, icon-based tiles instead of large text-based buttons
+- **TRANSPARENT TILE BACKGROUNDS**: All main menu tiles have transparent backgrounds that match the page background, making the tiles appear visually integrated with the background without visible tile borders or backgrounds
+- **SEAMLESS VISUAL INTEGRATION**: Menu tiles blend seamlessly with the page background, creating a clean, integrated appearance where only the icons and any text labels are visible
+- All main menu tiles use clear, intuitive symbols/icons instead of text labels for universal recognition
+- Play/Start tile uses a distinctive play button icon (triangle or similar gaming symbol) that reliably initiates gameplay directly without intermediate screens
+- **DIRECT GAMEPLAY INITIATION**: Play/Start tile bypasses any old menu screens and takes users directly into the game
+- **MANDATORY FEATURES TILE**: Features tile prominently displayed with clear information/help icon that reliably navigates to the dedicated Features page
+- **MANDATORY ACHIEVEMENTS TILE**: Erfolge (Achievements) tile prominently displayed with clear achievement/trophy icon that reliably navigates to the dedicated Achievements page
+- **ACHIEVEMENTS TILE ANIMATION SYSTEM**: The Erfolge (Achievements) tile includes an animation system that activates after a game session ends if the player has unlocked any new achievements during that session
+- **NEW ACHIEVEMENT CALL-TO-ACTION**: When new achievements are earned, the Achievements tile displays a visually noticeable animation (pulsing, glowing, or bouncing effect) to encourage the player to view their achievements
+- **NON-DISRUPTIVE ANIMATION**: The achievement tile animation is visually noticeable but not disruptive to the overall user interface or navigation experience
+- **SESSION-BASED ANIMATION TRIGGER**: The animation only activates when new achievements have been earned in the last completed game session
+- **ANIMATION RESET CONDITIONS**: The animation resets or stops after the player visits the achievements page or starts a new game session
+- **ACHIEVEMENT NOTIFICATION PERSISTENCE**: The animation persists until the player either views the achievements page or begins a new game, ensuring they are aware of their new accomplishments
+- **BILINGUAL ANIMATION SUPPORT**: The achievement tile animation system works consistently in both German and English language modes
+- **MOBILE-OPTIMIZED ANIMATION**: The achievement tile animation is optimized for mobile devices and does not impact performance or touch responsiveness
+- **VISUAL FEEDBACK INTEGRATION**: The animation integrates seamlessly with the existing achievement system and session tracking functionality
+- Leaderboard tile uses a trophy or ranking icon that reliably navigates to the Bestenliste page
+- Features tile uses an information or help icon (question mark, info symbol, or book icon) that reliably navigates to the dedicated Features page
+- Settings tile uses a gear or cog icon that reliably navigates to the Einstellungen page
+- Language selection tile uses a globe or flag icon for language switching functionality
+- All tile icons are clearly visible, appropriately sized, and instantly recognizable
+- Compact tile layout optimizes screen space while maintaining touch-friendly sizing for mobile devices
+- Icon-based design provides intuitive navigation without language barriers
+- Tiles maintain sufficient size for comfortable touch interaction on smartphones
+- Clean, modern visual design with consistent icon styling across all tiles
+- Tile icons use high contrast colors and clear visual design for maximum visibility
+- **NAVIGATION RELIABILITY**: All tiles must have properly configured navigation handlers that execute without errors
+- **TOUCH RESPONSIVENESS**: All tiles must respond reliably to touch interactions on mobile devices
+- **CLICK RESPONSIVENESS**: All tiles must respond reliably to mouse clicks on desktop devices
+
+## Features Information Page
+- Dedicated "Features" page accessible from the main menu through the new icon-based Features tile
+- Features tile prominently displayed on the start page with a clear information/help icon that reliably navigates to the Features page
+- **SCROLLABLE CONTENT REQUIREMENT**: Features page content must be fully scrollable on all devices, allowing users to scroll through all information even if it exceeds the viewport height
+- **DEVICE COMPATIBILITY**: Scrollability must work reliably on desktop browsers, smartphones, and tablets with proper touch and mouse wheel support
+- **CONTENT ACCESSIBILITY**: All Features page content must remain accessible through scrolling, ensuring no information is cut off or hidden
+- **LAYOUT ISOLATION**: Features page scrollability must not affect the fixed layout requirements of the game interface or other pages
+- **INDEPENDENT SCROLLING**: Features page scrolling functionality is completely independent from the game's fixed viewport system
+- Features page provides comprehensive information about all game mechanics and systems in the selected language (German or English)
+- Features page content dynamically displays in German or English based on the current language selection
+- Features page explains the core game concept and objective in clear, accessible language
+- Features page describes difficulty levels ("einfach", "mittel", "schwer" in German or "easy", "medium", "hard" in English) and their effects on gameplay
+- Features page describes all enemy types including basic enemies, diving enemies, zigzag enemies, formation-flying enemies, and all boss types with their unique characteristics
+- **BOSS TYPE DESCRIPTIONS**: Features page provides detailed descriptions of all six unique boss types including their distinct visual designs, movement patterns, attack behaviors, and special abilities
+- **BOSS TYPE SPECIFICATIONS**: Features page describes each boss type's unique characteristics:
+  - Boss Type 1 (Stage 5): Heavy Assault Boss with rapid-fire projectiles and horizontal movement patterns
+  - Boss Type 2 (Stage 10): Shield Boss with protective barriers and spread-shot attacks
+  - Boss Type 3 (Stage 15): Teleporting Boss with instant position changes and homing projectiles
+  - Boss Type 4 (Stage 20): Swarm Commander Boss that spawns additional mini-enemies during battle
+  - Boss Type 5 (Stage 25): Fortress Boss with multiple weapon systems and rotating attack patterns
+  - Boss Type 6 (Stage 30): Plasma Destroyer Boss with energy beam attacks and shield regeneration abilities
+- **ENHANCED DIVER ENEMY FORMATIONS**: Features page describes the enhanced "Diver" enemy multiple group attack patterns including varied circular formations, changing flight paths, diverse attack behaviors, and coordinated group movement
+- Features page explains the scoring system including point values for different enemy types and boss bonuses
+- Features page describes the player spaceship and its progressive visual upgrade system after boss victories
+- Features page explains the score-based upgrade system that triggers every 500,000 points including the F/A-18 transformation
+- Features page describes the "Doppel-Raumschiff" (Double Ship) system and how it can be unlocked
+- Features page explains the extra life reward system that triggers after every second boss victory
+- **COMPREHENSIVE POWER-UP DESCRIPTIONS**: Features page describes all implemented power-ups including:
+  - Rapid Fire: Increases firing rate for faster projectile shooting
+  - Magnet: Automatically attracts all power-ups and coins for 8 seconds
+  - Invincibility: Temporary protection from enemy attacks
+  - Spread Shot: Fires multiple projectiles in different directions
+  - Slow Motion: Slows down enemy movement and projectiles
+  - Shield: Provides protection from one enemy hit
+  - Double Ship: Activates Doppel-Raumschiff mode with two ships firing in parallel
+- **BILINGUAL POWER-UP DESCRIPTIONS**: Power-up descriptions display in German and English based on language selection
+- **MAGNET POWER-UP DESCRIPTION**: Features page describes the magnet power-up that automatically attracts all power-ups and coins in the game field to the player's spaceship for 8 seconds when collected
+- **BILINGUAL MAGNET DESCRIPTION**: Magnet power-up description displays in German as "Magnet-Power-Up: Zieht alle Power-Ups und Münzen für 8 Sekunden automatisch zum Raumschiff" and in English as "Magnet Power-Up: Automatically attracts all power-ups and coins to the spaceship for 8 seconds"
+- Features page explains the level progression system and boss level mechanics
+- Features page provides information about the leaderboard system and score submission
+- Features page includes information about the achievement system and how achievements are unlocked
+- Features page includes reliable navigation back to the main menu (Startseite)
+- Features page layout is optimized for both desktop and mobile viewing with clear sections and readable text
+- Features page content is comprehensive and covers all major game mechanics and systems
+- Features page serves as a complete game manual and reference guide for players
+- Features page information is automatically reviewed and updated to match the current game state and features after each code generation
+- Features page content accurately reflects all implemented game mechanics, systems, and features with current information
+- Features page provides detailed explanations that help players understand all aspects of the game in their selected language
+- Features page content updates dynamically when language is changed without requiring page reload
+- **FEATURES PAGE NAVIGATION**: Features page must be accessible from the main menu and provide reliable return navigation
+- **SCROLL PERFORMANCE**: Features page scrolling must be smooth and responsive on all devices without performance issues
+- **CONTENT OVERFLOW**: Features page must handle content overflow gracefully with proper scrolling mechanisms
+
+## Achievements Page (Erfolge-Seite)
+- **DEDICATED ACHIEVEMENTS PAGE**: Comprehensive "Erfolge" (Achievements) page accessible from the main menu through the dedicated Achievements tile
+- **ACHIEVEMENTS TILE ACCESS**: Achievements tile prominently displayed on the start page with a clear achievement/trophy icon that reliably navigates to the Achievements page
+- **CRITICAL SCROLLABLE ACHIEVEMENTS CONTENT**: Achievements page content must be fully scrollable on all devices, allowing users to browse through all achievements regardless of screen size or number of achievements
+- **VERTICAL SCROLLING REQUIREMENT**: Achievements page must support vertical scrolling to accommodate all achievement entries, ensuring no achievements are cut off or hidden on smaller screens
+- **DEVICE SCROLLING COMPATIBILITY**: Scrollability must work reliably on desktop browsers, smartphones, and tablets with proper touch and mouse wheel support
+- **CONTENT ACCESSIBILITY**: All achievements must remain accessible through scrolling, ensuring no achievement information is cut off or hidden
+- **LAYOUT ISOLATION**: Achievements page scrollability must not affect the fixed layout requirements of the game interface or other pages
+- **INDEPENDENT SCROLLING**: Achievements page scrolling functionality is completely independent from the game's fixed viewport system
+- **ACHIEVEMENT OVERVIEW DISPLAY**: Complete overview of all available achievements with their names, descriptions, and unlock status
+- **IMPLEMENTED ACHIEVEMENTS ONLY**: Only display achievements that are fully implemented and can actually be unlocked through current gameplay mechanics
+- **VISUAL ACHIEVEMENT STATUS**: Clear visual distinction between unlocked and locked achievements using different colors, opacity, or visual effects
+- **ACHIEVEMENT CATEGORIES ORGANIZATION**: Achievements organized into logical categories (Combat, Score, Boss Battles, Special) for easy browsing
+- **PROGRESS INDICATORS**: Visual progress bars or indicators for achievements that have partial completion
+- **ACHIEVEMENT DETAILS**: Detailed descriptions for each achievement explaining the unlock conditions in the selected language
+- **UNLOCK TIMESTAMPS**: Display of when each achievement was unlocked with date and time information
+- **COMPLETION STATISTICS**: Overall achievement completion statistics showing percentage of achievements unlocked
+- **ACHIEVEMENT ICONS**: Distinctive icons or badges for each achievement that are clearly visible and recognizable
+- **BILINGUAL ACHIEVEMENT PAGE**: All achievement page content displays in the selected language (German or English)
+- **ACHIEVEMENT SEARCH/FILTER**: Optional filtering or search functionality to find specific achievements
+- **ACHIEVEMENT SHARING**: Optional achievement sharing functionality for social features
+- **RETURN NAVIGATION**: Reliable navigation back to the main menu (Startseite) from the achievements page
+- **MOBILE OPTIMIZATION**: Achievements page layout optimized for both desktop and mobile viewing with touch-friendly interface
+- **PERFORMANCE OPTIMIZATION**: Achievements page loading and scrolling optimized for smooth performance on all devices
+- **REAL-TIME ACHIEVEMENT UPDATES**: Achievements page displays real-time updates of all achievements earned during the current game session
+- **SESSION ACHIEVEMENT HIGHLIGHTING**: Achievements unlocked during the current session are visually highlighted or marked as "newly unlocked"
+- **ACHIEVEMENT PAGE SYNCHRONIZATION**: Achievements page immediately reflects all achievement unlocks that occur during gameplay with automatic updates
+- **SESSION ACHIEVEMENT DISPLAY**: At the end of each game session, the Achievements page prominently displays all achievements unlocked during that session with enhanced visual feedback
+- **SCROLL PERFORMANCE**: Achievements page scrolling must be smooth and responsive on all devices without performance issues
+- **CONTENT OVERFLOW**: Achievements page must handle content overflow gracefully with proper scrolling mechanisms
+- **MAGNET MASTER ACHIEVEMENT DISPLAY**: Achievements page includes the "Magnet-Meister" / "Magnet Master" achievement with appropriate description and unlock conditions in both German and English
+- **REGISTERED USER ACHIEVEMENT DISPLAY**: Achievements page must accurately display all earned achievements and progress for registered users with persistent data across sessions
+- **ACHIEVEMENT STATUS RELIABILITY**: Achievement unlock status and progress must be reliably displayed and updated on the Achievements page for registered users
+
+## Settings Page (Einstellungen)
+- Dedicated Settings page (Einstellungen) accessible from the main menu through the Settings tile
+- Settings page provides access to difficulty selection with options for "einfach", "mittel", and "schwer"
+- Settings page provides access to language selection between German and English
+- Settings page displays all options in the currently selected language
+- **VOLUME SLIDER INTEGRATION**: Settings page includes the comprehensive volume slider control for adjusting all game audio
+- **VOLUME CONTROL ACCESS**: Volume slider on settings page maintains synchronized state with any other volume controls in the application
+- Settings page includes reliable navigation back to the main menu (Startseite)
+- Settings page layout is optimized for both desktop and mobile viewing
+- Settings page provides immediate feedback when settings are changed
+- Settings preferences are saved and persist across game sessions
+- **SETTINGS PAGE NAVIGATION**: Settings page must be accessible from the main menu and provide reliable return navigation
+
+## Enhanced Audio System with Complete Sound Integration
+- **CRITICAL AUDIO REPLACEMENT**: All self-generated start sounds are completely removed from the game
+- **UPLOADED AUDIO INTEGRATION**: The audio file "Galaga Game Start.m4a" is integrated and plays when the player clicks "Spielen" (Play) and the game starts
+- **EXCLUSIVE AUDIO PLAYBACK**: Only the uploaded "Galaga Game Start.m4a" audio is played at game start with no overlap or fallback to previous sounds
+- **PARALLEL AUDIO EXECUTION**: The uploaded audio plays in parallel with the game start sequence without delaying gameplay initialization
+- **VOLUME CONTROL RESPECT**: Game start audio respects the current volume level set by the volume slider
+- **AUDIO TIMING**: Game start audio begins immediately when the play button is clicked and continues during the transition to gameplay
+- **NO LEGACY AUDIO**: All previous game start sound effects are completely removed and replaced exclusively with the uploaded audio file
+- **RELIABLE PLAYBACK**: Game start audio system ensures the uploaded audio file plays reliably across all supported devices and browsers
+- **AUDIO PRELOADING**: The "Galaga Game Start.m4a" file is properly preloaded and ready for immediate playback when the game starts
+- **PERFORMANCE OPTIMIZATION**: Game start audio integration is optimized for mobile performance and does not impact game initialization speed
+- **COMPLETE AUDIO PLAYBACK**: The start music must play completely from beginning to end before the game begins
+- **AUDIO DURATION SYNCHRONIZATION**: Game initialization waits for the full duration of the "Galaga Game Start.m4a" audio file to complete before starting gameplay
+- **CRITICAL STAGE FLAG AUDIO INTEGRATION**: The audio file "Galaga Stage Flag.m4a" is integrated and plays immediately after the intro sequence and before gameplay begins
+- **STAGE FLAG AUDIO TIMING**: Stage flag audio plays after the intro sequence completes and must be fully played before gameplay starts
+- **STAGE FLAG AUDIO SYNCHRONIZATION**: Game initialization waits for the complete playback of the "Galaga Stage Flag.m4a" audio file before starting active gameplay
+- **STAGE FLAG AUDIO SEQUENCE**: The complete audio sequence is: Game Start Audio → Intro Sequence → Stage Flag Audio → Gameplay Begins
+- **STAGE FLAG VOLUME RESPECT**: Stage flag audio respects the current volume level set by the volume slider
+- **STAGE FLAG PRELOADING**: The "Galaga Stage Flag.m4a" file is properly preloaded and ready for immediate playback after the intro
+- **CRITICAL SHOOTING AUDIO INTEGRATION**: The audio file "Galaga Shooting.m4a" is integrated and plays instantly with minimal latency every time the player fires
+- **EXCLUSIVE SHOOTING AUDIO**: Only the uploaded "Galaga Shooting.m4a" audio is played for shooting actions with no overlap or fallback to previous shooting sounds
+- **INSTANT SHOOTING RESPONSE**: Shooting audio plays immediately when the fire button is pressed with minimal latency for responsive gameplay feedback
+- **NO LEGACY SHOOTING AUDIO**: All previous shooting sound effects are completely removed and replaced exclusively with the uploaded "Galaga Shooting.m4a" file
+- **SHOOTING AUDIO PRELOADING**: The "Galaga Shooting.m4a" file is properly preloaded and ready for immediate playback when shooting occurs
+- **SHOOTING AUDIO OPTIMIZATION**: Shooting audio is optimized for rapid-fire gameplay with minimal latency and no audio overlap issues
+- **RELIABLE SHOOTING PLAYBACK**: Shooting audio system ensures the uploaded audio file plays reliably across all supported devices and browsers
+- **CRITICAL DIVER ENEMY ATTACK AUDIO INTEGRATION**: The audio file "Galaga Enemy flying.m4a" is integrated and plays every time an enemy ship of type 'Diver' starts its attack run towards the player's ship
+- **DIVER ATTACK AUDIO TIMING**: Diver attack audio plays immediately when a 'Diver' enemy begins its diving attack pattern with minimal delay for responsive audio feedback
+- **DIVER AUDIO OPTIMIZATION**: Diver attack audio is optimized to prevent excessive overlap when multiple 'Diver' enemies attack in quick succession with proper audio management
+- **DIVER AUDIO PERFORMANCE**: Diver attack audio does not affect gameplay performance or interfere with other audio features while maintaining clear audio feedback
+- **DIVER AUDIO PRELOADING**: The "Galaga Enemy flying.m4a" file is properly preloaded and ready for immediate playback when diver attacks occur
+- **DIVER AUDIO RELIABILITY**: Diver attack audio system ensures the uploaded audio file plays reliably across all supported devices and browsers
+- **DIVER AUDIO VOLUME RESPECT**: Diver attack audio respects the current volume level set by the volume slider
+- **DIVER AUDIO COOLDOWN**: Diver attack audio includes cooldown mechanism to prevent audio spam when multiple diver enemies attack rapidly
+- **CRITICAL ENEMY ATTACK ALERT AUDIO**: Distinct, attention-grabbing "attack alert" sound effect that plays each time an enemy ship enters attack/descend mode to alert the player
+- **ATTACK ALERT AUDIO INTEGRATION**: Attack alert sound is managed in the audio system (`frontend/src/utils/audio.ts`) and is called from the enemy attack logic in the main game component (`frontend/src/components/GalagaGame.tsx`)
+- **ATTACK ALERT TIMING**: Attack alert sound plays with minimal delay when enemies begin their attack/descent patterns with precise timing
+- **ATTACK ALERT RELIABILITY**: Attack alert sound is reliably triggered every time an enemy enters downward attack flight without failures or missed triggers
+- **ATTACK ALERT PERFORMANCE**: Attack alert sound does not overlap or cause performance issues, with proper audio management to prevent interference with other game sounds
+- **ATTACK ALERT DEVICE COMPATIBILITY**: Attack alert sound is clearly audible on all supported devices and browsers with consistent playback quality
+- **ATTACK ALERT NON-INTERFERENCE**: Attack alert sound does not interfere with gameplay mechanics or other audio events including shooting, explosions, or background music
+- **ENEMY ATTACK AUDIO CLARITY**: Enemy attack alert sound is clearly distinguishable from other game audio and does not overlap or interfere with shooting or other sounds
+- **MAGNET POWER-UP AUDIO INTEGRATION**: Special distinctive sound effect that plays when the magnet power-up is collected, clearly distinguishable from other power-up collection sounds
+- **MAGNET ACTIVATION AUDIO**: Unique audio feedback when the magnet power-up activates its attraction effect, providing clear indication that the magnet is working
+- **MAGNET AUDIO VOLUME RESPECT**: Magnet power-up audio effects respect the current volume level set by the volume slider
+- **MAGNET AUDIO OPTIMIZATION**: Magnet power-up audio is optimized for clear playback without interfering with other game sounds
+- **AUDIO MANAGEMENT REFACTORING**: Complete refactoring of audio management code to prevent duplicate or outdated sound triggers
+- **ASSET PATH VERIFICATION**: All audio asset paths are verified and corrected to ensure proper loading and playback
+- **DUPLICATE AUDIO REMOVAL**: All duplicate audio triggers and outdated sound code are completely removed from the codebase
+- **AUDIO SYSTEM CLEANUP**: Audio system is cleaned and optimized to use only the specified audio files without any legacy sound remnants
+- **DESKTOP AUDIO TESTING**: All sound triggers are tested and verified to work reliably on desktop browsers
+- **MOBILE AUDIO TESTING**: All sound triggers are tested and verified to work reliably on mobile browsers with proper responsiveness
+- **CROSS-BROWSER COMPATIBILITY**: Audio system works consistently across all supported browsers including Chrome, Firefox, Safari, and mobile browsers
+- **AUDIO CONTEXT MANAGEMENT**: AudioContext is properly initialized and managed to comply with browser autoplay policies
+- **VOLUME STATE PERSISTENCE**: Volume level set by the volume slider must persist throughout the entire game session
+- **CROSS-SESSION VOLUME PERSISTENCE**: Volume preference is saved and persists across game sessions and page reloads
+- **SYNCHRONIZED VOLUME CONTROLS**: Volume controls on start page and in-game settings are synchronized and maintain consistent state
+- **COMPREHENSIVE VOLUME RESPECT**: All audio elements respect the current volume level including game start, stage flag, shooting, diver attack, enemy attack alert, magnet power-up audio, and all other sound effects
+- Cool sci-fi sound effect that plays during the outro sequence with engaging audio feedback, distinct from other game sounds
+- Enemy explosion sound effects featuring a distinctive sci-fi explosion inspired by classic Star Trek effects with a short, deep bass pulse with rising/falling pitch, metallic shimmer, and subtle echo
+- Special enhanced sound effects for boss enemy defeats that are more dramatic and impactful than regular enemy explosions
+- Cool celebratory sound effect for extra life rewards that is distinct from boss defeat sounds and emphasizes the special achievement
+- Sound effects when enemies are hit or destroyed that activate consistently with balanced audio levels
+- Sound effects for player ship explosion
+- Sound effects for game over that trigger correctly
+- Sound effects for power-up collection
+- Enhanced special audio effects for score-based upgrades that are distinctive, celebratory, and clearly audible
+- Enhanced special audio effects for boss victory upgrades that provide clear, dramatic feedback for unlocked features
+- Enhanced audio feedback for "Doppel-Raumschiff" activation and special upgrade unlocks with celebratory sound effects
+- Distinctive, celebratory sound effects when Doppel-Raumschiff mode is activated with prominent audio feedback
+- Audio feedback when Doppel-Raumschiff mode deactivates or expires with clear sound indication
+- Enhanced sound effects for special upgrade notifications that are clearly distinguishable from other game audio with celebratory characteristics
+- **CRITICAL POINT EARNING AUDIO**: Distinct short "ding" audio notification that plays whenever the player earns points (for defeating enemies, collecting power-ups, completing levels, etc.)
+- **POINT AUDIO INTEGRATION**: Point earning audio is integrated with the real-time point display system and plays immediately when points are awarded
+- **POINT AUDIO VARIETY**: Different point earning sounds based on the source of points (enemy defeat, power-up collection, level completion, boss victory) for enhanced audio feedback
+- **POINT AUDIO OPTIMIZATION**: Point earning audio is optimized for frequent playback without overlap or performance issues with cooldown mechanism to prevent audio spam
+- **POINT AUDIO VOLUME RESPECT**: Point earning audio respects the current volume level set by the volume slider
+- **POINT AUDIO COOLDOWN**: Point earning audio includes cooldown mechanism to prevent audio spam when multiple points are earned rapidly
+- All audio files preloaded and ready for immediate playback
+- **VOLUME SLIDER INTEGRATION**: All audio elements are controlled by the comprehensive volume slider system
+- **AUDIO TESTING REQUIREMENT**: Review and test all sound integrations for point system to ensure effects are triggered at correct moments, are not duplicated, and do not overlap undesirably
+
+## Audio Volume State Persistence
+- **CRITICAL VOLUME STATE MANAGEMENT**: Audio volume level set by the volume slider must persist throughout the entire game session
+- **SESSION-WIDE VOLUME PERSISTENCE**: When volume is adjusted on the start page or settings, the game must maintain that volume level after starting and throughout all gameplay
+- **VOLUME STATE SYNCHRONIZATION**: Volume level changes must be properly synchronized with the game's audio system
+- **PERSISTENT AUDIO CONTROL**: Volume functionality must work consistently across all game states including intro sequence, stage flag audio, active gameplay, level transitions, and game over sequences
+- **AUDIO STATE VALIDATION**: Game initialization must check and respect the current volume level set in the main menu or settings
+- **CROSS-SESSION PERSISTENCE**: Volume preference must be saved and persist across game sessions and page reloads
+- **RELIABLE VOLUME FUNCTIONALITY**: Audio volume controls must work reliably on both the start page and during gameplay with consistent behavior
+- **AUDIO SYSTEM INTEGRATION**: Volume level must be properly integrated with all audio elements including sound effects, game start music, stage flag audio, diver attack audio, enemy attack alerts, outro audio, point earning sounds, and magnet power-up audio
+- **IMMEDIATE VOLUME RESPONSE**: When volume is adjusted, all audio must immediately reflect the new volume level
+- **MUTE FUNCTIONALITY**: When volume is set to 0%, all audio must stop immediately and remain off until volume is increased
+- **SETTINGS SYNCHRONIZATION**: Volume level changes in settings must be synchronized with the main audio system and persist throughout the session
+
+## Core Gameplay Features
+
+### Animated Pulsating Star Effects System
+- **CRITICAL MOBILE-ONLY STAR REQUIREMENT**: Animated, pulsating star effects are displayed exclusively on mobile devices and are completely removed from desktop browsers
+- **DESKTOP STAR REMOVAL**: Star animations are completely disabled and not rendered on desktop browsers, ensuring they only appear on mobile devices
+- **MOBILE DEVICE DETECTION**: Star animation system includes proper mobile device detection to ensure stars only display on smartphones and tablets
+- **STRICT BORDER POSITIONING**: On mobile devices, stars are positioned exclusively outside the game field boundaries, creating a decorative border effect that frames the gameplay area without any overlap
+- **ABSOLUTE NON-INTERFERENCE GUARANTEE**: Stars remain completely outside the main playfield and do not overlap, cover, or interfere with any part of the actual play area, player movement, enemy spawning, projectiles, or any gameplay mechanics
+- **PLAYFIELD PROTECTION**: Stars are strictly prohibited from appearing within or overlapping any portion of the game canvas or active gameplay area
+- **PULSATING ANIMATION**: Stars feature smooth pulsating animation effects including scaling (size changes) and brightness variations that create engaging visual movement
+- **ANIMATION TIMING**: Star pulsation animations use varied timing intervals to create natural, organic movement patterns rather than synchronized pulsing
+- **VISUAL ENGAGEMENT**: Star effects are visually engaging and add atmospheric enhancement to the gameplay experience without being distracting
+- **MOBILE OPTIMIZATION**: Star animations are optimized for smooth performance on mobile devices without impacting game frame rates or responsiveness
+- **PERFORMANCE EFFICIENCY**: Star animation system is lightweight and does not affect core gameplay performance or cause lag on any supported devices
+- **UI ELEMENT CLEARANCE**: Stars do not overlap with or obscure any UI elements including score display, lives counter, level indicator, or control buttons
+- **CONTROL BUTTON CLEARANCE**: Stars maintain clear separation from all control buttons (movement arrows, fire button) ensuring no interference with touch interactions
+- **CANVAS BOUNDARY RESPECT**: Stars are positioned precisely outside the game canvas boundaries without extending into the active gameplay area
+- **DISTRIBUTION PATTERN**: Stars are evenly distributed around the viewport perimeter outside the game field with appropriate spacing to create balanced visual coverage
+- **ANIMATION SMOOTHNESS**: Star pulsation effects use smooth transitions and easing functions to create fluid, professional-quality animations
+- **BRIGHTNESS VARIATION**: Star brightness pulsation creates subtle lighting effects that enhance the space atmosphere without overwhelming the gameplay visuals
+- **SIZE SCALING**: Star size pulsation creates dynamic visual interest through gentle scaling animations that maintain consistent positioning
+- **LAYERING SYSTEM**: Stars are rendered on the appropriate layer to ensure they appear behind all gameplay elements but remain clearly visible
+- **CONTRAST MAINTENANCE**: Star effects maintain appropriate contrast against the background image while ensuring all gameplay elements remain clearly distinguishable
+- **ATMOSPHERIC ENHANCEMENT**: Star animation system enhances the space-themed atmosphere of the game while preserving full gameplay functionality
+- **CONSISTENT VISIBILITY**: Stars remain consistently visible throughout all gameplay states including level transitions, boss battles, and special events
+- **ANIMATION PERSISTENCE**: Star pulsation effects continue smoothly throughout the entire gameplay session without interruption or performance degradation
+- **RESPONSIVE DESIGN**: Star positioning and animation adapt appropriately to different mobile screen sizes while maintaining border placement outside the game canvas and visual quality
+- **VIEWPORT BORDER EXCLUSIVE**: Stars are positioned exclusively in the viewport areas outside the game canvas, never within or overlapping the actual playfield
+- **DESKTOP PERFORMANCE OPTIMIZATION**: Improved rendering performance on desktop by completely removing star effects, reducing computational overhead and ensuring smooth gameplay even with many simultaneous visual effects
+
+### Enhanced Game Intro Sequence with Extended Audio Synchronization
+- When gameplay starts, an enhanced intro sequence displays before the actual game begins
+- **EXTENDED AUDIO-SYNCHRONIZED DURATION**: Intro sequence duration is synchronized with the "Galaga Game Start.m4a" audio file plus an additional 2 seconds, remaining visible for the entire duration of the custom start audio plus 2 extra seconds
+- **COMPLETE AUDIO PLAYBACK REQUIREMENT**: The intro sequence must wait for the complete playback of the "Galaga Game Start.m4a" audio file before adding the additional 2-second extension
+- **ENHANCED VISUAL PRESENTATION**: "Bereit!" (German) or "Ready!" (English) text appears prominently in the center of the game field using an arcade-style font with enhanced visual effects
+- **EXCITEMENT-BUILDING ELEMENTS**: Intro sequence includes additional game elements such as animated starfield, pulsing text effects, particle animations, or subtle spaceship previews to build excitement
+- **VISUAL ENHANCEMENT REQUIREMENTS**: Intro screen features enhanced visual effects including glowing text, animated backgrounds, particle effects, or other engaging elements that create anticipation
+- **MOBILE OPTIMIZATION**: Enhanced intro visuals are optimized for mobile performance while maintaining visual impact
+- **SMOOTH TRANSITION**: After the custom audio completes and the additional 2 seconds pass, the intro sequence smoothly transitions to stage flag audio playback
+- **STAGE FLAG AUDIO TRANSITION**: After intro sequence completes, the "Galaga Stage Flag.m4a" audio plays and must complete before active gameplay begins
+- **FULL GAME INITIALIZATION**: After both intro sequence and stage flag audio complete, normal gameplay begins with enemy spawning and player control
+- **UI LAYOUT CONSISTENCY**: After the intro and stage flag audio, the full game field is immediately displayed with all control buttons at the bottom and all game data (score, lives, stage, difficulty, power-ups) above the field
+- **IMMEDIATE UI VISIBILITY**: All UI elements including control buttons and game stats are immediately visible and properly positioned after the complete audio sequence finishes
+- **CONSISTENT LAYOUT**: Stage 1 UI layout after intro and stage flag audio is identical to the UI layout in later stages with no missing or misplaced elements
+- **AUDIO-VISUAL COORDINATION**: Enhanced intro sequence provides engaging visual content that complements the custom start audio for a cohesive experience
+- **TIMING PRECISION**: Intro sequence timing is precisely calculated to ensure the audio plays completely plus exactly 2 additional seconds before stage flag audio begins
+
+### Game Over Sequence with Mandatory Pause and Reliable Outro
+- When the player loses all lives, the game immediately enters a mandatory 3-second pause state
+- During this 3-second pause, the game displays the current game state frozen without any transitions, animations, or user interactions
+- The pause is strictly enforced and cannot be skipped, bypassed, or interrupted by any user action
+- Game state is completely locked during the pause to prevent any interference with the outro sequence
+- After exactly 3 seconds, the game automatically and reliably transitions to the outro sequence without fail
+- Outro sequence is guaranteed to display every single time the game ends, with bulletproof triggering logic that cannot fail
+- Outro sequence features a distinctive sci-fi sound effect and visible animation that provides visual closure
+- **VOLUME STATE RESPECT**: Outro sci-fi sound effect respects the current volume level set by the volume slider
+- Outro sequence lasts for exactly 5 seconds with engaging visual effects optimized for mobile performance
+- Players can skip the outro at any time by touching the screen or clicking anywhere to jump directly to highscore entry
+- If not skipped, the outro automatically completes after 5 seconds and transitions to highscore entry
+- Outro sequence has robust error handling and fallback mechanisms to ensure it never fails to appear
+- The complete game over sequence is strictly enforced: Game Over → Mandatory 3-second pause → Guaranteed outro sequence → Highscore entry
+- Outro triggering logic is bulletproof with multiple validation checks and failsafe mechanisms to ensure consistent execution
+- Game over state management prevents any race conditions or timing issues that could interfere with the outro
+- Outro sequence works reliably across all devices, browsers, and platforms including iOS, Safari, and Brave
+- Outro animation and sound are properly synchronized and provide satisfying game closure feedback
+- State transition logic ensures the outro cannot be bypassed or skipped accidentally during the mandatory pause
+- Outro sequence implementation includes comprehensive error handling to guarantee execution in all scenarios
+
+### Player Spaceship with Enhanced Progressive Visual Upgrades and Score-Based Enhancements
+- Player controls a spaceship at the bottom of the screen
+- Spaceship can move left and right across the screen width with reduced speed for smoother and more comfortable gameplay
+- Player can shoot projectiles upward toward enemies
+- Touch controls optimized for mobile devices
+- Spaceship visually resembles a classic spaceship design with pointed nose, wings, and detailed shape
+- All visual elements remain within the existing rectangular hitbox area
+- Hitbox size remains unchanged for consistent collision detection
+- When hit by enemy projectile, spaceship explodes with animated explosion effect
+- After explosion animation completes, spaceship respawns after a short delay for the next life
+- Respawn delay allows player to see explosion and prepare for continued gameplay
+- **CRITICAL IMPLEMENTATION REQUIREMENT**: Enhanced progressive visual upgrade system that dramatically and unmistakably transforms the player's spaceship appearance after each completed boss level (every 5 stages)
+- **MANDATORY VISUAL CHANGES**: Each boss victory triggers a highly visible and unmistakable visual upgrade to the player's spaceship that is immediately noticeable and impossible to miss with dramatic color changes, shape modifications, and spectacular effects
+- **CUMULATIVE UPGRADES**: Visual upgrades are cumulative and persist for the remainder of the play session, building upon previous enhancements with increasingly spectacular effects
+- **UPGRADE PROGRESSION REQUIREMENTS**: 
+  - First upgrade (after stage 5): Dramatic color transformation with bright, vibrant colors and subtle glow effects that are clearly visible against all backgrounds
+  - Second upgrade (after stage 10): Addition of prominent glowing energy trails, particle effects, or pulsing auras around the ship that are highly visible during movement
+  - Third upgrade (after stage 15): Major design enhancements such as wing extensions, additional geometric details, or energy field effects that significantly change the ship's silhouette
+  - Fourth upgrade (after stage 20): Advanced visual effects combining all previous upgrades with new spectacular features like rotating energy rings, plasma trails, or holographic elements
+  - Further upgrades continue the progression with increasingly impressive and unmistakable visual enhancements that are clearly distinguishable from previous levels
+- **VISIBILITY REQUIREMENTS**: All visual upgrades maintain the same hitbox size and collision detection properties while being dramatically more visible with maximum contrast and brightness
+- **IMMEDIATE FEEDBACK**: Upgraded spaceship visuals are immediately and clearly distinguishable from the base design and all previous upgrade levels with high contrast and prominence
+- **CELEBRATION EFFECTS**: Visual upgrade system provides instant, celebratory feedback with dramatic transformation animations when upgrades are applied
+- **TRANSITION ANIMATIONS**: Upgrades are applied immediately after boss defeat with spectacular transition effects including flash animations, particle bursts, and celebratory visual feedback lasting 2-3 seconds
+- **RESET BEHAVIOR**: When the game restarts, the spaceship returns to its base appearance and upgrades must be earned again
+- **MOBILE OPTIMIZATION**: All upgrade visuals are optimized for mobile performance while maintaining maximum visibility and impact on all screen sizes
+- **CRITICAL 500,000-POINT MILESTONE**: Enhanced score-based special upgrade system that triggers every 500,000 points reached (500,000, 1,000,000, 1,500,000, etc.)
+- **F/A-18 TRANSFORMATION REQUIREMENT**: Critical 500,000-point milestone upgrade transforms the spaceship design to be noticeably narrower and longer, visually inspired by an F/A-18 jet fighter with a prominently yellowish color tone
+- **F/A-18 DESIGN SPECIFICATIONS**: F/A-18 inspired design features a sleek, elongated fuselage with swept-back wings and a pointed nose, making it clearly distinct from the original spaceship design with dramatically different proportions
+- **DIMENSIONAL CHANGES**: The ship becomes visibly narrower in width and significantly longer in length, creating a distinctive jet fighter silhouette that is immediately recognizable
+- **COLOR REQUIREMENTS**: Yellowish color tone is prominently applied to the entire ship, making it immediately recognizable as the 500,000-point upgrade with high contrast against all backgrounds
+- **TECHNICAL REQUIREMENTS**: F/A-18 inspired ship design maintains the same hitbox size and collision detection properties while being visually transformed with dramatically different appearance
+- **ACTIVATION TIMING**: The new F/A-18 inspired design with yellowish coloring is activated precisely when the player reaches or exceeds 500,000 points and remains active for the entire play session
+- **CELEBRATION REQUIREMENTS**: F/A-18 design transformation is accompanied by spectacular celebration effects and prominent German notifications announcing the milestone achievement
+- **VISUAL DISTINCTION**: The narrower, longer F/A-18 inspired design is clearly distinguishable from all other ship appearances and upgrade levels with unmistakable visual differences
+- **SESSION PERSISTENCE**: F/A-18 inspired ship design resets to the original appearance when the game restarts and must be earned again by reaching 500,000 points
+- **PRIORITY SYSTEM**: The 500,000-point F/A-18 transformation takes priority over other visual upgrades and is clearly visible during gameplay with maximum prominence
+- **IMPLEMENTATION GUARANTEE**: F/A-18 design implementation ensures the narrower, longer, yellowish ship is properly rendered and clearly visible throughout the remainder of the play session
+- **TRACKING ACCURACY**: Score-based upgrade system correctly tracks when 500,000 points is reached and immediately applies the F/A-18 visual transformation without delay
+- **STATE PERSISTENCE**: F/A-18 upgrade visual state persists correctly and is not overridden by other ship design changes during the same play session
+- **NOTIFICATION SYSTEM**: Score-based upgrades are accompanied by highly visible celebration animations with bright flashing effects, particle explosions, and prominent German language notifications
+- **NOTIFICATION DISPLAY**: Score-based upgrade notifications display prominently for 3-4 seconds with large, bright text and celebratory visual effects that cannot be missed
+- **CUMULATIVE STACKING**: Score-based upgrades are cumulative and stack with boss-level visual upgrades, creating increasingly spectacular combined effects
+- **SESSION MANAGEMENT**: Score-based upgrades persist throughout the current play session and reset when the game restarts
+- **MILESTONE TRACKING**: Score-based upgrade system tracks total accumulated points and triggers upgrades at precise 500,000-point intervals with immediate visual feedback
+- **UNIQUE EFFECTS**: Each score-based upgrade provides unique and highly visible visual enhancements that are clearly distinguishable from previous upgrades
+- **SPECIAL FEATURES**: Score-based upgrades include special animation effects, particle systems, energy auras, or enhanced ship appearance modifications that are immediately noticeable
+- **DOPPEL-RAUMSCHIFF INTEGRATION**: "Doppel-Raumschiff" feature may be unlocked as part of score-based upgrades, providing distinctive and dramatic visual representation with dual ship formation
+- **GERMAN NOTIFICATIONS**: Score-based upgrade notifications display prominently with large German text such as "UPGRADE FREIGESCHALTET!" or "DOPPEL-RAUMSCHIFF AKTIVIERT!" with bright, flashing backgrounds
+- **MOTIVATION SYSTEM**: Score-based upgrade system provides additional motivation and rewards for achieving high scores with unmistakable visual celebration
+- **PERFORMANCE OPTIMIZATION**: All score-based visual effects are optimized for mobile performance while maintaining maximum visibility and celebratory impact
+
+### Doppel-Raumschiff (Double Ship) System with Enhanced Visual Effects
+- **CRITICAL IMPLEMENTATION REQUIREMENT**: "Doppel-Raumschiff" mode can be unlocked through score-based upgrades (every 500,000 points) or boss victory special upgrades
+- **DUAL SHIP CONTROL**: When activated, the player controls two spaceships simultaneously positioned side by side with clear visual separation
+- **SYNCHRONIZED MOVEMENT**: Both ships move together as a single unit when the player uses movement controls with perfect coordination
+- **DUAL FIRING**: Both ships fire projectiles simultaneously when the fire button is pressed, effectively doubling the player's firepower with clearly visible dual projectile streams
+- **GAMEPLAY ADVANTAGE**: Double ship mode provides a significant gameplay advantage with increased offensive capability that is immediately noticeable
+- **DURATION SYSTEM**: Double ship mode is active for a limited time duration (approximately 30-45 seconds) or until one of the ships is hit by an enemy projectile
+- **DEACTIVATION CONDITIONS**: When hit, the double ship mode deactivates and returns to single ship gameplay with clear visual feedback
+- **VISUAL REPRESENTATION REQUIREMENTS**: Visual representation clearly shows two distinct spaceships operating as a coordinated unit with prominent visual connection effects such as energy beams or particle streams
+- **UPGRADE CONSISTENCY**: Both ships maintain the same visual upgrade level and appearance as the player's current progression including all boss-level and score-based upgrades
+- **ACTIVATION CELEBRATION**: Double ship activation is accompanied by spectacular celebration animations with bright particle effects, energy connections, and prominent German notifications
+- **GERMAN NOTIFICATION**: Double ship activation notification displays "DOPPEL-RAUMSCHIFF AKTIVIERT!" in large, bright text with celebratory background effects for 3-4 seconds
+- **CONNECTION EFFECTS**: Double ship mode includes special particle effects, energy beams, or glowing connections between the two ships that are highly visible and clearly indicate the dual ship state
+- **AUDIO FEEDBACK**: Audio feedback plays when double ship mode is activated and when it deactivates with distinctive celebratory sounds
+- **VOLUME STATE RESPECT**: Double ship audio feedback respects the current volume level set by the volume slider
+- **TIMER DISPLAY**: Double ship mode timer is prominently displayed to the player showing remaining duration with clear visual countdown
+- **COLLISION SYSTEM**: Double ship collision detection works for both ships - either ship can be hit to end the mode with immediate visual feedback
+- **REWARD VALUE**: Double ship mode enhances the reward value of score milestones and boss victories with spectacular visual feedback
+- **MOBILE OPTIMIZATION**: Double ship visual effects are optimized for mobile performance while maintaining maximum visibility and impact
+- **SESSION RESET**: Double ship mode resets when the game restarts or when all lives are lost
+- **DEACTIVATION FEEDBACK**: Double ship deactivation includes visual feedback showing the transition back to single ship mode with clear animation
+- **UNLOCK CONDITIONS**: Double ship mode is unlocked as a special reward for boss victories or when reaching 500,000-point milestones
+- **VISUAL PROMINENCE**: All double ship effects must be highly visible and immediately recognizable with maximum contrast and brightness
+- **TECHNICAL IMPLEMENTATION**: Double ship system must be fully functional with reliable activation, proper dual ship rendering, synchronized controls, and accurate collision detection
+
+### Boss Victory Special Upgrades System with Enhanced Celebration Effects
+- **MANDATORY IMPLEMENTATION**: After each boss-level victory, the player unlocks special visual enhancements as immediate rewards with spectacular celebration sequences
+- **UPGRADE TYPES**: Boss victory upgrades include special animations, particle effects, energy fields, or "Doppel-Raumschiff" features with dramatic visual presentation
+- **CELEBRATION REQUIREMENTS**: Boss victory upgrades are accompanied by highly visible celebration animations lasting 3-4 seconds with bright flashing effects, particle explosions, and prominent visual feedback
+- **GERMAN NOTIFICATIONS**: Boss victory upgrade notifications display in large German text such as "BOSS BESIEGT! UPGRADE ERHALTEN!" with bright, celebratory backgrounds that cannot be missed
+- **CUMULATIVE SYSTEM**: Boss victory upgrades are cumulative and stack with existing score-based upgrades, creating increasingly spectacular combined visual effects
+- **SESSION PERSISTENCE**: Boss victory upgrades persist throughout the current play session with clearly visible ongoing effects
+- **IMMEDIATE GRATIFICATION**: Boss victory upgrade notifications display prominently with distinctive visual effects that provide immediate gratification
+- **AUDIO CELEBRATION**: Boss victory upgrade audio effects respect the current volume level set by the volume slider
+- **VISUAL DISTINCTION**: Special upgrade effects are clearly distinguishable from regular boss victory rewards with enhanced brightness, particle effects, and visual prominence
+- **INTEGRATION**: Boss victory upgrades enhance the existing progressive visual upgrade system with additional spectacular features that are immediately noticeable
+- **PERFORMANCE**: All boss victory upgrade effects are optimized for mobile performance while maintaining maximum visual impact and celebration
+- **REWARD PATHWAYS**: Boss victory upgrades complement the score-based upgrade system to provide multiple reward pathways with unmistakable visual feedback
+- **TANGIBLE REWARDS**: Boss victory upgrade system ensures players receive tangible, highly visible rewards for defeating challenging boss enemies
+- **DOPPEL-RAUMSCHIFF UNLOCK**: Boss victory upgrades can unlock "Doppel-Raumschiff" mode as a special reward with immediate activation and spectacular visual presentation
+- **UNIQUE FEATURES**: Boss victory special upgrades include unique particle effects, enhanced animations, energy auras, or temporary gameplay advantages with prominent visual representation
+- **CELEBRATION LANGUAGE**: Boss victory upgrades are announced with celebratory German language notifications using large, bright text with flashing backgrounds
+- **VISUAL IMPACT**: All boss victory celebration effects must be dramatic, highly visible, and impossible to miss with maximum visual impact and prominence
+
+### Ultra-Enhanced Diver Enemy System with Maximum Formation Variety and Excitement
+- Enemies spawn in formation waves at the top of the screen
+- Multiple distinct enemy types with unique visual designs and movement patterns
+- Basic enemy type with simple downward movement and occasional side-to-side motion
+- **CRITICAL ULTRA-ENHANCED DIVER ENEMY COORDINATION**: Diving enemy type that performs extremely varied and exciting group attack patterns with sophisticated formation movement, dynamic flight path changes, and highly coordinated group behavior that creates spectacular visual displays
+- **MAXIMUM VARIETY ATTACK PATTERNS**: "Diver" enemies execute an extensive array of distinct group attack patterns including circular formations, V-formations, diamond patterns, spiral descents, zigzag group movements, wave formations, figure-8 patterns, cross formations, star patterns, and complex multi-phase combinations with each pattern featuring unique behaviors and visual characteristics
+- **DYNAMIC FLIGHT PATH EVOLUTION**: "Diver" enemy groups dynamically evolve their flight paths during attack runs, seamlessly transitioning between multiple different formation patterns and movement behaviors to create highly exciting and unpredictable attack sequences that keep players engaged
+- **ULTRA-DIVERSE ATTACK BEHAVIORS**: Each "Diver" group attack pattern features dramatically unique behaviors including varied descent speeds, multiple rotation directions, dynamic formation tightness adjustments, complex coordination algorithms, and sophisticated group synchronization to ensure maximum variety and excitement in every encounter
+- **ENHANCED FORMATION PERSISTENCE**: "Diver" enemies maintain their precise group formation throughout their entire attack sequence with advanced coordination algorithms that adapt to pattern changes, ensuring consistent group behavior regardless of pattern complexity while allowing for smooth transitions between different formations
+- **OPTIMIZED TACTICAL FIRING**: "Diver" enemies fire projectiles at strategically optimized rates while in their varied attack patterns, with firing patterns that complement and enhance their formation movement to create engaging tactical challenges without overwhelming the player
+- **ULTRA-SYNCHRONIZED ATTACK TIMING**: "Diver" enemy groups begin their varied formation attacks with perfect timing synchronization, creating visually spectacular and tactically challenging group attack patterns that are immediately recognizable and clearly distinguishable from other enemy behaviors
+- **ADVANCED PATTERN VARIETY SYSTEM**: "Diver" enemy groups intelligently select from an extensive library of available attack patterns with weighted randomization to ensure maximum gameplay variety and prevent predictable encounters, with each pattern offering unique tactical challenges and visual excitement
+- **PRESERVED NON-LETHAL TOUCH RULE**: Player can touch "Diver" enemies during their varied coordinated attack runs without losing a life, maintaining the special collision rule for diving enemies while they are in any of their formation attack modes
+- **SPECTACULAR VISUAL COORDINATION**: "Diver" enemy groups display highly prominent and spectacular visual coordination during their varied formation attacks, making the group behavior and pattern type immediately apparent and visually thrilling to players with enhanced animation effects, particle trails, and synchronized movement indicators
+- **COMPREHENSIVE ATTACK PATTERN SPECIFICATIONS**: Multiple distinct attack patterns including:
+  - Circular Formation: Groups move in tight circular patterns while descending with synchronized rotation
+  - V-Formation: Groups maintain V-shaped formations with coordinated movement and dynamic spacing
+  - Diamond Pattern: Groups form diamond shapes with synchronized positioning and rotation effects
+  - Spiral Descent: Groups spiral downward in coordinated helical patterns with varying pitch and speed
+  - Zigzag Group Movement: Groups move in coordinated zigzag patterns across the screen with synchronized direction changes
+  - Wave Formation: Groups create wave-like movement patterns during descent with fluid undulation
+  - Figure-8 Pattern: Groups execute figure-8 movements with precise coordination and timing
+  - Cross Formation: Groups form cross patterns with perpendicular movement coordination
+  - Star Pattern: Groups arrange in star formations with radial movement synchronization
+  - Multi-Phase Combinations: Complex patterns that combine multiple formation types in sequence
+- **ULTRA-DYNAMIC PATTERN TRANSITIONS**: "Diver" groups seamlessly transition between multiple different formation patterns during their attack run, creating complex and highly exciting multi-phase attack sequences that showcase spectacular coordination and visual variety
+- **INTELLIGENT GROUP SIZE MANAGEMENT**: "Diver" enemy attack groups consist of 3-6 enemies per group with intelligent group size variation based on attack pattern complexity, game difficulty, and visual impact requirements, ensuring balanced and maximally exciting gameplay
+- **RELIABLE FORMATION COMPLETION**: "Diver" enemy groups complete their varied attack patterns by exiting the lower part of the playfield in formation if not destroyed during their attack run, maintaining perfect group coordination until the very end regardless of pattern complexity
+- **ENHANCED AUDIO INTEGRATION**: "Diver" enemy group attacks trigger the "Galaga Enemy flying.m4a" audio when any coordinated attack pattern begins, with sophisticated audio management to prevent overlap when multiple groups with different patterns attack in succession
+- **PERFORMANCE OPTIMIZED COORDINATION**: All "Diver" enemy coordination algorithms and visual effects for multiple attack patterns are heavily optimized for smooth performance on mobile devices without impacting overall game frame rates or responsiveness, while maintaining maximum visual excitement
+- **ULTRA-CLEAR BEHAVIORAL DISTINCTION**: "Diver" enemy varied coordinated formation attacks are dramatically distinguishable from other enemy movement patterns and from each other, providing unique and highly engaging tactical challenges that significantly enhance gameplay variety and excitement
+- **DESKTOP PERFORMANCE OPTIMIZATION**: Significantly improved rendering performance for "Diver" enemy formations on desktop by optimizing formation calculation algorithms, visual effect rendering, and coordination logic to ensure ultra-smooth gameplay even with multiple simultaneous complex formation patterns and visual effects
+- Zigzag enemy type that moves in serpentine patterns across the screen
+- Formation-flying enemy type that maintains group movement patterns
+- Boss enemy type that appears every fifth stage (stages 5, 10, 15, 20, etc.) with significantly increased health and unique attack patterns
+- Each enemy type has different point values based on difficulty and rarity
+- All enemy types can shoot projectiles downward toward the player
+- Enemy sprites visually resemble the original Galaga enemy designs with distinct characteristics for each type
+- Enemy visuals fit within their existing bounding boxes and hitboxes
+- Enemy designs maintain good visibility on both desktop and mobile screens
+- Hitboxes and movement patterns scaled appropriately for each enemy type
+- New enemy types integrate seamlessly with existing wave spawning system
+- Enemy behavior adjusts based on selected difficulty level
+
+### Multiple Unique Boss Types System
+- **CRITICAL BOSS LEVEL TIMING**: Boss levels occur precisely every fifth stage (stages 5, 10, 15, 20, etc.) with correct stage counting logic that accurately identifies when the current stage number is divisible by 5
+- **MANDATORY BOSS ANNOUNCEMENT**: Boss level transitions display special messaging indicating upcoming boss battles with ">>> BOSS Level! <<<" announcement that is highly visible and clearly displayed
+- **BOSS ANNOUNCEMENT REQUIREMENTS**: Boss level announcement must be prominently displayed during level transition with large, bright text that cannot be missed
+- **LANGUAGE LOCALIZATION**: Boss level announcement displays in the selected language: ">>> BOSS Level! <<<" in German and ">>> BOSS Level! <<<" in English
+- **UNIQUE BOSS TYPES REQUIREMENT**: Multiple unique boss types with distinct visual designs, attack patterns, and movement behaviors that are clearly noticeable and visually distinct from each other
+- **CRITICAL BOSS VISUAL DISTINCTION**: Each boss type must have a dramatically different and immediately recognizable appearance that is clearly distinguishable from all other boss types and regular enemies
+- **MANDATORY BOSS FUNCTIONALITY**: All six boss types must be fully functional with unique movement patterns, attack behaviors, and special abilities that create distinctly different gameplay experiences
+- **VARIETY SYSTEM**: Each boss level features a different boss type to provide varied challenges and prevent repetitive gameplay
+- **BOSS TYPE SPECIFICATIONS**:
+  - Boss Type 1 (Stage 5): Heavy Assault Boss with rapid-fire projectiles and horizontal movement patterns with distinctive visual design featuring heavy armor appearance
+  - Boss Type 2 (Stage 10): Shield Boss with protective barriers and spread-shot attacks with unique defensive appearance featuring visible shield elements
+  - Boss Type 3 (Stage 15): Teleporting Boss with instant position changes and homing projectiles with special teleportation effects and energy-based visual design
+  - Boss Type 4 (Stage 20): Swarm Commander Boss that spawns additional mini-enemies during battle with command-style visual design featuring command center appearance
+  - Boss Type 5 (Stage 25): Fortress Boss with multiple weapon systems and rotating attack patterns with fortress-like appearance featuring multiple weapon ports
+  - Boss Type 6 (Stage 30): Plasma Destroyer Boss with energy beam attacks and shield regeneration abilities with advanced technological appearance featuring plasma energy effects
+- **CYCLING SYSTEM**: Boss types cycle through in sequence, ensuring each boss level presents a unique and clearly distinguishable challenge
+- **SIZE REQUIREMENTS**: All boss types are exactly 1.5 times larger than regular enemies with distinctive designs and significantly more visually impressive appearance
+- **UNIQUE CHARACTERISTICS**: Each boss type has unique movement patterns, attack frequencies, and special abilities that are clearly visible and noticeably different during gameplay
+- **SPAWN POSITIONING**: Boss types spawn in the center of the game field at the top of the screen
+- **HEALTH SYSTEM**: All boss types have multiple health points and require several hits to destroy
+- **PROTECTIVE FORMATION**: During boss levels, all other enemy figures orbit around the boss enemy to protect it, creating a defensive formation
+- **ORBITING MECHANICS**: Orbiting enemies move in circular or elliptical patterns around the boss while maintaining their protective positioning
+- **ORBITING COMBAT**: Orbiting enemies can still shoot projectiles and must be destroyed along with the boss to complete the level
+- **TARGET PRIORITY**: The boss remains the primary target but is protected by the orbiting enemy formation
+- **VICTORY REWARDS**: When any boss type is defeated, the player receives a substantial point bonus significantly higher than regular enemies
+- **AUTOMATIC POWER-UP**: After defeating a boss, the player automatically receives a special power-up as a reward
+- **CHALLENGE SCALING**: Boss battles provide increased challenge and excitement compared to regular stages
+- **ANNOUNCEMENT SYSTEM**: Boss appearance is announced with special visual or audio cues to signal the boss level
+- **GAMEPLAY CONSISTENCY**: Boss levels maintain the same core gameplay mechanics while providing enhanced challenge
+- **SYSTEM INTEGRATION**: All boss types integrate with the existing collision detection and combat systems
+- **DURABILITY**: All boss types have significantly increased durability and require multiple hits to destroy
+- **VICTORY EFFECTS**: Boss defeat triggers special visual effects and sound feedback to celebrate the victory
+- **AUDIO CELEBRATION**: Boss defeat audio effects respect the current volume level set by the volume slider
+- **IMPLEMENTATION ACCURACY**: Boss level logic must be correctly implemented with precise stage number validation to ensure boss levels appear at exactly stages 5, 10, 15, 20, etc. without errors
+- **DETECTION LOGIC**: Boss level detection logic uses modulo operation (stage % 5 === 0) to accurately determine when a boss level should occur
+- **TYPE SELECTION**: Boss type selection must cycle through all available boss types to ensure variety and prevent repetition
+- **VISUAL DISTINCTION**: Each boss encounter must be clearly distinguishable from previous boss encounters through unique visual design and attack patterns
+- **UPGRADE TRIGGERS**: Boss victory triggers enhanced progressive visual upgrade to the player's spaceship with spectacular celebration effects and dramatic transformation animations
+- **SPECIAL REWARDS**: Boss victory triggers special upgrade rewards including animations, particle effects, or "Doppel-Raumschiff" features with highly visible celebration sequences and prominent German notifications
+- **PROGRESSIVE DIFFICULTY**: Each new boss type has increased difficulty and more complex attack patterns than the previous boss types
+- **BOSS TYPE TRACKING**: Backend system tracks which specific boss types have been defeated by each player for the Boss Master achievement with comprehensive tracking logic
+- **CRITICAL BOSS FORMATION IMPLEMENTATION**: All boss types must be properly implemented with their protective enemy formations that orbit around the boss during battle
+- **BOSS FORMATION VISIBILITY**: Boss formations must be clearly visible and functional with orbiting enemies maintaining proper circular or elliptical movement patterns around each boss type
+- **BOSS DESIGN VERIFICATION**: All six boss types must have their unique visual designs properly implemented and clearly distinguishable from each other as described in the Features page
+
+### Extra Life Reward System
+- After every second boss-level victory (stages 10, 20, 30, 40, etc.), the player is rewarded with an extra life
+- Extra life reward triggers specifically after defeating bosses on stages 10, 20, 30, 40, etc. (every 10th stage)
+- Extra life reward system uses precise stage number validation to ensure rewards trigger only at stages 10, 20, 30, 40, etc. and not after every boss victory
+- Extra life reward logic must correctly identify when a boss victory occurs on a stage that is divisible by 10 (stage % 10 === 0)
+- When extra life is awarded, a visually striking winner animation displays prominently on screen that is clearly noticeable and distinct from regular boss defeat effects
+- Winner animation features celebratory visual effects with bright colors, particle effects, or special animations that are highly visible and engaging
+- Winner animation is clearly noticeable and distinct from regular boss defeat effects with enhanced visual prominence
+- Cool sound effect plays during the extra life award sequence, different from regular boss defeat sounds and clearly audible
+- **VOLUME STATE RESPECT**: Extra life sound effect respects the current volume level set by the volume slider
+- Extra life sound effect is engaging and celebratory to emphasize the special reward with distinctive audio characteristics
+- The "+1" increase in the 'Leben' (lives) display is visually highlighted and emphasized with special visual effects
+- Lives display shows a special visual effect when the extra life is added (such as glowing, pulsing, or color change) that clearly indicates the life increase
+- The lives counter visually updates with emphasis to clearly show the player has gained an additional life with unmistakable visual feedback
+- Winner animation and sound effect are optimized for mobile performance while maintaining high visibility
+- Extra life reward sequence provides satisfying feedback for achieving significant milestones with clear visual and audio confirmation in German
+- Winner animation lasts long enough to be clearly noticed but doesn't interrupt gameplay flow excessively
+- Extra life reward system tracks boss victories accurately to trigger rewards at correct intervals with precise counting logic that only activates on stages divisible by 10
+- Visual highlighting of the lives display ensures players clearly understand they have received an extra life through prominent visual effects
+- Extra life reward system must be fully functional and clearly visible during gameplay with reliable triggering only at stages 10, 20, 30, 40, etc.
+- Extra life reward does not trigger after boss victories on stages 5, 15, 25, 35, etc. - only after stages 10, 20, 30, 40, etc.
+- Extra life functionality must be properly implemented with correct stage validation logic and reliable visual/audio feedback
+- Lives counter must correctly increment by 1 when extra life is awarded and display the updated life count immediately
+- Extra life reward system must function correctly throughout the entire game progression without any failures or missed rewards
+- All extra life feedback messages and visual effects display in German language
+
+### Level System and Progression
+- Game progresses through multiple levels with increasing difficulty
+- Each level consists of waves of enemies that must be defeated to advance
+- Every fifth level (5, 10, 15, 20, etc.) is a boss level featuring a special boss enemy with correct stage counting
+- Regular levels contain standard enemy waves, while boss levels feature single powerful boss enemies with unique types
+- When all enemies in a level are destroyed, the game waits for all explosion animations to complete before triggering level completion
+- Level transition only begins after the last enemy explosion animation has fully finished
+- This ensures all visual effects are properly displayed before the level transition starts
+- Level transition effect activates after all explosions are complete with proper timing and visual feedback
+- Game loop continues running throughout the entire level transition sequence to prevent freezing
+- Playfield fades out smoothly over exactly 2 seconds with gradual opacity reduction while game loop remains active
+- During fade-out, "Nächstes Level X" message displays prominently in the center of the screen using the current language setting
+- For boss levels, transition message indicates the upcoming boss level with additional announcement
+- Boss level transitions display "Nächstes Level X" (German) or "Next Level X" (English) followed by ">>> BOSS Level! <<<" on a separate line below the main transition text
+- Boss level announcement ">>> BOSS Level! <<<" appears in the selected language: ">>> BOSS Level! <<<" in German and ">>> BOSS Level! <<<" in English
+- Boss level transition logic must correctly identify when the next level is a boss level using accurate stage number validation (next stage % 5 === 0) and display the appropriate ">>> BOSS Level! <<<" message
+- Transition message shows the upcoming level number in selected language (German: "Nächstes Level X", English: "Next Level X")
+- Message remains visible and clearly readable throughout the entire transition sequence
+- After fade-out completes, playfield fades back in smoothly over approximately 1 second while maintaining active game loop
+- Next level starts after exactly 1 second delay following the complete fade-in
+- Transition sequence is smooth, clearly visible, and provides proper visual feedback to the player without interrupting game loop execution
+- Gameplay resumes automatically after the transition completes without any freezing or hanging
+- Level progression increases enemy difficulty, speed, and spawn patterns
+- Boss levels provide significantly increased challenge compared to regular levels with unique boss types
+- Level number tracking throughout gameplay
+- Current level is tracked and available for score submission when game ends
+- Boss level completion triggers enhanced progressive visual upgrade to the player's spaceship with spectacular celebration effects
+- Boss level completion triggers special upgrade rewards with highly visible celebration sequences and prominent German notifications
+
+### Difficulty System
+- Three difficulty levels: "einfach", "mittel", and "schwer"
+- Difficulty selection available in main menu before starting gameplay
+- Difficulty selection also accessible through settings menu (Einstellungen page)
+- Enemy speed increases with higher difficulty levels
+- Enemy fire rate increases with higher difficulty levels
+- Number of enemies per wave increases with higher difficulty levels
+- Boss enemy health and attack intensity scale with difficulty level for all boss types
+- For "einfach" (easy) difficulty, enemy speed is set to 0.4, enemy fire rate is set to 0.0003, and enemies per wave multiplier is set to 0.7 for comfortable and enjoyable gameplay
+- The "einfach" difficulty provides a relaxed gaming experience with significantly slower enemy movement and reduced enemy fire frequency
+- All boss types on easy difficulty have reduced health and less aggressive attack patterns
+- Difficulty setting affects scoring multipliers for higher challenge levels
+- Difficulty preference persists across game sessions
+- Clear visual indicators showing selected difficulty level
+- Game speed for "einfach" difficulty is specifically calibrated to provide a comfortable, slower-paced experience that matches the original intended easy gameplay speed
+
+### Enhanced Power-Up System with Comprehensive Power-Up Collection
+- Power-ups appear occasionally during gameplay as collectible items
+- Power-ups spawn randomly at different positions at the top of the screen
+- Power-ups slowly fall downward after spawning, moving at a consistent speed
+- Player can collect power-ups by moving spaceship to touch them as they fall
+- **CRITICAL DESKTOP POWER-UP FIX**: Power-up falling logic must be fixed for desktop browsers so that falling power-ups always reach the player's ship position, regardless of screen size or aspect ratio, and are not blocked or lost off-screen
+- **DESKTOP VIEWPORT COMPATIBILITY**: Power-up movement system must be properly calibrated for desktop browser viewports to ensure power-ups fall through the complete game field and reach the bottom where the player ship is located
+- **SCREEN SIZE ADAPTATION**: Power-up falling mechanics must adapt to different desktop screen sizes and aspect ratios to ensure consistent behavior across all desktop configurations
+- **POWER-UP TRAJECTORY FIX**: Power-up falling trajectory must be corrected to prevent power-ups from being lost or blocked before reaching the player's ship area on desktop browsers
+- **COMPREHENSIVE POWER-UP IMPLEMENTATION**: All power-ups described in the Features page must be fully implemented and functional:
+  - **Rapid Fire**: Increases firing rate for faster projectile shooting with visual indicator and timer
+  - **Magnet**: Automatically attracts all power-ups and coins for 8 seconds with distinctive visual effects
+  - **Invincibility**: Temporary protection from enemy attacks with clear visual indication
+  - **Spread Shot**: Fires multiple projectiles in different directions with enhanced firepower
+  - **Slow Motion**: Slows down enemy movement and projectiles for tactical advantage
+  - **Shield**: Provides protection from one enemy hit with visible shield effect
+  - **Double Ship**: Activates Doppel-Raumschiff mode with two ships firing in parallel
+- **CRITICAL MAGNET POWER-UP IMPLEMENTATION**: Magnet power-up that activates a magnetic attraction effect for 8 seconds when collected
+- **MAGNET POWER-UP MECHANICS**: When the magnet power-up is collected, all power-ups and coins currently in the game field are automatically attracted to and collected by the player's spaceship for 8 seconds
+- **MAGNET ATTRACTION BEHAVIOR**: During the 8-second magnet effect, any new power-ups or coins that spawn or appear in the game field are immediately attracted to the player's spaceship without requiring manual collection
+- **MAGNET VISUAL EFFECTS**: Magnet power-up displays distinctive visual effects when collected, including particle animations, energy fields, or attraction lines showing items being drawn to the player's ship
+- **MAGNET AUDIO FEEDBACK**: Special distinctive sound effect plays when the magnet power-up is collected, clearly distinguishable from other power-up collection sounds
+- **MAGNET ACTIVATION AUDIO**: Unique audio feedback when the magnet power-up activates its attraction effect, providing clear indication that the magnet is working
+- **MAGNET TIMER DISPLAY**: Visual timer or indicator shows the remaining duration of the magnet effect to the player
+- **MAGNET POWER-UP SPAWNING**: Magnet power-up spawns randomly like other power-ups with appropriate frequency to provide balanced gameplay enhancement
+- **MAGNET EFFECT DURATION**: Magnet attraction effect lasts exactly 8 seconds from the moment of collection
+- **MAGNET VISUAL DISTINCTION**: Magnet power-up has a distinctive visual appearance that clearly differentiates it from other power-up types
+- **MAGNET COLLECTION TRACKING**: System tracks power-ups collected through magnet attraction for the "Magnet-Meister" achievement
+- **MAGNET PERFORMANCE OPTIMIZATION**: Magnet power-up attraction mechanics are optimized for smooth performance on all devices without impacting gameplay frame rates
+- **MAGNET POWER-UP ICON**: Magnet power-up uses the provided `magnet-powerup-icon-transparent.dim_64x64.png` asset as its visual representation
+- **MAGNET POWER-UP COLOR**: Magnet power-up appears as a red power-up in the game field with distinctive coloring to differentiate it from other power-ups
+- **MAGNET SPAWN FREQUENCY**: Magnet power-up spawns with balanced frequency - not too common to maintain game balance, but frequent enough to provide meaningful gameplay enhancement
+- **MAGNET COMPATIBILITY**: Magnet power-up system is fully compatible with existing power-up systems and does not interfere with other game features
+- **CRITICAL MAGNET POWER-UP BUG FIX**: Analyze and fix any bugs preventing the magnet power-up from appearing in the game, including power-up generation logic, spawning probability, visual rendering, and collection mechanics
+- **MAGNET POWER-UP GENERATION VERIFICATION**: Ensure the magnet power-up is properly included in the power-up generation pool and can spawn during normal gameplay conditions
+- **MAGNET POWER-UP TESTING**: Test and verify that the magnet power-up appears under normal gameplay conditions and functions as described (attracting other power-ups to the player)
+- **POWER-UP VISUAL INDICATORS**: Each power-up type has distinctive visual appearance and icons that clearly identify their function
+- **POWER-UP DURATION TIMERS**: Active power-ups display clear duration timers showing remaining effect time
+- **POWER-UP EFFECT STACKING**: Multiple power-ups can be active simultaneously with proper effect management
+- **POWER-UP COLLECTION FEEDBACK**: Clear visual and audio feedback when power-ups are collected
+- Special power-ups are automatically awarded when boss enemies are defeated
+- Boss victory power-ups provide enhanced effects or longer duration compared to regular power-ups
+- Power-ups have visual indicators showing their type and effect
+- Power-up effects have clear duration timers visible to player
+- Power-ups disappear when they reach the bottom of the screen if not collected
+
+### Background Environment System
+- Starfield background with twinkling stars scattered across the game area
+- Background objects including planets, spaceships, and asteroids that appear regularly and are clearly visible
+- Background objects spawn at random positions and move slowly across the screen
+- Planets appear as distant celestial bodies with varied sizes and colors, clearly visible against the starfield
+- Background spaceships appear as distinct vessels moving across the far background with good visibility
+- Asteroids appear as well-defined rocky objects drifting through space
+- All background objects are rendered behind all gameplay elements to ensure no interference
+- Background objects maintain sufficient opacity and contrast to be clearly visible while not obscuring gameplay elements
+- Background objects appear frequently enough to create an engaging space atmosphere
+- Background objects do not overlap or obscure important gameplay elements like the player spaceship, enemies, or UI elements
+- Background objects enhance the space atmosphere without affecting collision detection or gameplay mechanics
+- Background objects are optimized for mobile performance and do not impact game speed
+
+### Ultra-Enhanced Visual Effects System with Maximum Desktop Performance Optimization
+- Animated explosion effects when enemies are destroyed
+- Animated explosion effects when player spaceship is hit and destroyed
+- Special enhanced explosion effects when boss enemies are defeated with larger and more impressive animations
+- Explosion animations play at the location where objects were hit
+- Multiple explosion animation frames create smooth visual feedback
+- Boss defeat explosions are visually distinct and more spectacular than regular enemy explosions
+- Explosion effects enhance visual engagement without affecting gameplay mechanics
+- Explosion animations are optimized for mobile performance
+- Player explosion animation is distinct and clearly indicates ship destruction
+- Level transition fade effects for smooth level progression with precise timing and continuous game loop execution
+- Fade-out and fade-in animations during level transitions with 2-second fade-out and 1-second fade-in duration that run smoothly without interrupting the game loop
+- Level transition message display with proper visibility and language localization
+- Level transition waits for all enemy explosion animations to complete before starting
+- Outro sequence animation effects that provide visual closure to the game experience with sci-fi themed visuals
+- Winner animation effects for extra life rewards that are visually striking and celebratory with high visibility and clear visual prominence
+- Visual highlighting effects for lives display when extra life is awarded with unmistakable visual feedback
+- **MANDATORY SPECTACULAR UPGRADE EFFECTS**: Spectacular progressive visual upgrade effects for the player's spaceship that are applied after each boss victory with dramatic transformation animations lasting 2-3 seconds
+- **UPGRADE TRANSITION REQUIREMENTS**: Progressive upgrade transition effects include bright particle explosions, energy bursts, color transformations, and celebratory visual feedback that cannot be missed
+- **SCORE-BASED CELEBRATION EFFECTS**: Enhanced score-based upgrade visual effects that trigger at 500,000-point intervals with spectacular celebration animations, bright flashing backgrounds, and prominent German notifications
+- **SCORE CELEBRATION DURATION**: Score-based upgrade celebrations include particle explosions, energy effects, and large celebratory text displays lasting 3-4 seconds with maximum visibility
+- **BOSS VICTORY CELEBRATION EFFECTS**: Boss victory special upgrade effects including dramatic animations, particle effects, and "Doppel-Raumschiff" features with highly visible celebration sequences
+- **BOSS CELEBRATION NOTIFICATIONS**: Boss victory upgrade celebrations feature bright flashing effects, particle bursts, and prominent German notifications such as "BOSS BESIEGT! UPGRADE ERHALTEN!"
+- **UPGRADE NOTIFICATION SYSTEM**: Special upgrade notification effects that display prominently when score milestones or boss victories unlock new enhancements with spectacular visual presentation
+- **NOTIFICATION VISIBILITY**: Upgrade notification displays use large, bright text with celebratory backgrounds and particle effects that are impossible to miss
+- **DOPPEL-RAUMSCHIFF ACTIVATION EFFECTS**: Doppel-Raumschiff activation effects with spectacular visual representation including particle systems, energy connections, and prominent German notifications
+- **DOPPEL-RAUMSCHIFF CELEBRATION**: Doppel-Raumschiff activation celebration displays "DOPPEL-RAUMSCHIFF AKTIVIERT!" with bright, flashing backgrounds and celebratory particle effects
+- **DOPPEL-RAUMSCHIFF DEACTIVATION**: Doppel-Raumschiff deactivation effects when the mode ends or when hit with clear visual feedback
+- **GERMAN CELEBRATION LANGUAGE**: Celebratory visual effects when score-based upgrades are unlocked with prominent German language notifications using maximum brightness and contrast
+- **ACHIEVEMENT UNLOCK EFFECTS**: Spectacular visual effects when achievements are unlocked including bright particle explosions, celebratory animations, and prominent achievement notifications
+- **ACHIEVEMENT CELEBRATION DURATION**: Achievement unlock celebrations display for 3-4 seconds with maximum visual impact and celebratory effects
+- **MAGNET POWER-UP VISUAL EFFECTS**: Distinctive visual effects when magnet power-up is collected, including particle animations, energy fields, or attraction lines showing items being drawn to the player's ship
+- **MAGNET ATTRACTION ANIMATIONS**: Visual animations showing power-ups and coins being attracted to the player's spaceship during the magnet effect with clear attraction lines or particle trails
+- **MOBILE PERFORMANCE**: All special upgrade effects are optimized for mobile performance while maintaining maximum visual impact and celebration
+- **VISIBILITY REQUIREMENTS**: All upgrade celebration effects must be dramatic, highly visible, and impossible to miss with bright colors, particle effects, and prominent animations
+- **CONTRAST REQUIREMENTS**: Upgrade visual effects must use maximum contrast, brightness, and visual prominence to ensure they cannot be overlooked by players
+- **EFFECT DISTINCTION**: All celebration animations must be clearly distinguishable from regular gameplay effects with enhanced visual impact and duration
+- **ULTRA-DESKTOP PERFORMANCE OPTIMIZATION**: Dramatically improved rendering performance for all visual effects on desktop by implementing advanced optimization techniques including:
+  - Efficient particle system calculations with reduced computational overhead
+  - Optimized visual effect rendering pipelines for smooth performance
+  - Advanced coordination logic optimization for complex enemy formations
+  - Streamlined animation processing for multiple simultaneous effects
+  - Enhanced memory management for visual effect systems
+  - Optimized rendering techniques for pulsating stars and background elements
+  - Improved collision detection algorithms for better performance
+  - Advanced caching mechanisms for frequently used visual effects
+  - Optimized shader usage for particle effects and animations
+  - Enhanced frame rate management to ensure ultra-smooth gameplay even with many simultaneous complex visual effects including enemy formations, particle systems, and celebration animations
+
+### Enhanced Point Display System with Real-Time Integration and Audio Feedback
+- **CRITICAL POINT DISPLAY INTEGRATION**: When an enemy is destroyed, the points earned for that specific enemy are immediately displayed on screen at the exact location where the enemy was destroyed with animated floating text
+- **REAL-TIME SCORE UPDATES**: Score display in the info area above the game field updates in real-time immediately when points are earned from any source
+- **ANIMATED POINT NOTIFICATIONS**: Point values appear as animated floating text that shows the exact number of points gained for each individual enemy, power-up collection, level completion, and boss victory
+- **BOSS POINT DISPLAY**: Boss enemies display significantly higher point values when defeated, clearly showing the substantial bonus points with enhanced visual presentation
+- **POWER-UP POINT DISPLAY**: Power-up collection displays point values at the collection location with animated floating text
+- **LEVEL COMPLETION POINTS**: Level completion bonus points are displayed prominently with animated text when a level is completed
+- **POINT ANIMATION SYSTEM**: Point display text appears briefly with upward floating animation and then fades away after a short duration
+- **VISIBILITY OPTIMIZATION**: Point values are clearly visible and readable against all game backgrounds with high contrast colors and appropriate sizing
+- **MOBILE OPTIMIZATION**: Point display system is optimized for mobile visibility and does not interfere with gameplay or touch controls
+- **COMPREHENSIVE POINT RULES**: All point-awarding rules are clearly implemented in code including different values for enemy types, power-ups, boss victories, and level completions
+- **FEATURES PAGE SYNCHRONIZATION**: Point values and scoring rules in the code match exactly with the descriptions provided on the Features page
+- **ACHIEVEMENT SYSTEM INTEGRATION**: Point display system is synchronized with the achievement tracker to automatically detect score-based achievements like "Millionär" (1,000,000 points)
+- **SCORE MILESTONE DETECTION**: Achievement system monitors real-time score updates to trigger score-based achievements immediately when thresholds are reached
+- **BILINGUAL POINT DISPLAY**: Point display text and notifications appear in the selected language (German or English)
+- **PERFORMANCE OPTIMIZATION**: Point display animations are optimized for smooth performance on all devices without impacting gameplay frame rates
+- **VISUAL FEEDBACK CONSISTENCY**: Point display system provides consistent visual feedback for all point-earning actions throughout the game
+- **SCORE TRACKING ACCURACY**: Real-time score tracking ensures accurate point accumulation and proper triggering of score-based upgrades and achievements
+- **CRITICAL POINT EARNING AUDIO**: Distinct short "ding" audio notification that plays whenever the player earns points (for defeating enemies, collecting power-ups, completing levels, etc.)
+- **POINT AUDIO INTEGRATION**: Point earning audio is integrated with the real-time point display system and plays immediately when points are awarded
+- **POINT AUDIO VARIETY**: Different point earning sounds based on the source of points (enemy defeat, power-up collection, level completion, boss victory) for enhanced audio feedback
+- **POINT AUDIO OPTIMIZATION**: Point earning audio is optimized for frequent playback without overlap or performance issues with cooldown mechanism to prevent audio spam
+- **POINT AUDIO VOLUME RESPECT**: Point earning audio respects the current volume level set by the volume slider
+- **POINT AUDIO COOLDOWN**: Point earning audio includes cooldown mechanism to prevent audio spam when multiple points are earned rapidly
+
+### Combat Mechanics
+- Player projectiles destroy enemies on contact
+- Enemy projectiles destroy player spaceship on contact (unless shield is active)
+- All boss types require multiple hits to destroy based on their increased health
+- Collision detection between all game objects including falling power-ups and all boss types
+- Player has limited lives (typically 3) with potential for extra lives through boss victory rewards
+- Shield power-up blocks one enemy projectile hit before deactivating
+- When player ship is destroyed, explosion plays followed by respawn delay
+- Different enemy types require different numbers of hits or have varying health levels
+- All boss types have significantly increased durability and require multiple hits to destroy
+- All boss types can withstand several player projectiles before being defeated
+- Combat difficulty scales with selected difficulty level
+- All boss types combat mechanics integrate with existing collision detection systems
+- Doppel-Raumschiff mode provides enhanced combat capability with dual projectile firing
+- Doppel-Raumschiff collision detection works for both ships in the formation
+- **ENHANCED DIVER COLLISION RULES**: "Diver" enemies maintain the special collision rule where the player can touch them during their varied coordinated attack runs without losing a life
+- **NON-LETHAL DIVER CONTACT**: Player collision with "Diver" enemies during their multiple formation attack patterns does not result in life loss, preserving the unique gameplay mechanic for diving enemies
+
+### Scoring System
+- Points awarded for destroying different enemy types
+- Score increases based on enemy difficulty, type, and rarity
+- Basic enemies award standard points
+- Diving and zigzag enemies award increased points for higher difficulty
+- Formation-flying enemies award bonus points when destroyed as a group
+- All boss types award significantly higher points due to increased challenge and health
+- Boss victory provides substantial point bonuses much higher than regular enemies
+- Difficulty level provides scoring multipliers for higher challenge levels
+- High score tracking across game sessions
+- Enhanced score-based upgrade system that tracks total accumulated points and triggers spectacular special upgrades every 500,000 points
+- Score milestone notifications display prominently when 500,000-point intervals are reached with bright, celebratory German language feedback and particle effects
+- Score-based upgrade notifications include information about unlocked features such as "Doppel-Raumschiff" mode with spectacular visual presentation
+- **REAL-TIME SCORE INTEGRATION**: Scoring system is fully integrated with the real-time point display system and achievement tracker for immediate feedback and milestone detection
+
+### Persistent Leaderboard System
+- Global leaderboard displaying the top 50 player scores from all players
+- Leaderboard shows player names/identifiers, their high scores, the difficulty level achieved, and the stage reached for each score
+- Difficulty level and stage reached displayed for each leaderboard entry in the user's selected language (German or English)
+- Stage column header displays as "Stage" in German and "Stage" in English
+- Leaderboard accessible from main menu and game over screen
+- Players can view their ranking compared to other players
+- Leaderboard updates automatically when new high scores are achieved
+- Leaderboard displays in the selected language (German or English)
+- Difficulty levels shown as "einfach", "mittel", "schwer" in German or "easy", "medium", "hard" in English
+- Stage reached displayed as "Stage X" in both German and English for each leaderboard entry
+- Leaderboard interface optimized to display all 50 entries clearly on both desktop and mobile devices
+- Leaderboard heading displays as "Top 50 Bestenliste" in German and "Top 50 High Scores" in English based on the selected language
+- **CRITICAL HIGHSCORE STORAGE RELIABILITY**: Leaderboard system must be thoroughly tested and improved to ensure highscores are reliably saved regardless of the number of existing entries or duplicate player names
+- **BULLETPROOF SCORE SUBMISSION**: Score submission functionality must be bulletproof and guaranteed to work in all scenarios including when there are already 50 entries or multiple entries with the same player name
+- **COMPREHENSIVE ERROR HANDLING**: Leaderboard backend must include comprehensive error handling and validation to prevent any score submission failures or data loss
+- **RELIABLE ENTRY MANAGEMENT**: Backend leaderboard management must reliably handle all score submissions and maintain exactly 50 entries through proper lowest-score replacement logic
+- **GUARANTEED SCORE ACCEPTANCE**: Every valid score submission must be guaranteed to be accepted and processed by the backend without any failures or rejections due to technical issues
+- **ROBUST DATABASE OPERATIONS**: All database operations for leaderboard management must be robust and include proper error handling, transaction management, and data validation
+- **FAILSAFE MECHANISMS**: Leaderboard system must include multiple failsafe mechanisms to ensure score submissions never fail due to technical issues, database constraints, or existing entry conflicts
+- **THOROUGH TESTING REQUIREMENT**: Leaderboard functionality must be thoroughly tested with various scenarios including full leaderboards, duplicate names, and edge cases to ensure reliable operation
+- **PERFORMANCE OPTIMIZATION**: Leaderboard operations must be optimized for performance while maintaining reliability and data integrity
+- **DATA CONSISTENCY**: Leaderboard system must maintain data consistency and prevent any corruption or loss of existing scores during new submissions
+- Leaderboard allows the same player name to appear multiple times without overwriting previous entries
+- Up to 50 total entries are permanently stored, allowing multiple scores from the same player to coexist in the leaderboard
+- Each score submission creates a new leaderboard entry regardless of whether the player name already exists
+- Previous scores from the same player name are preserved and not replaced when new scores are submitted
+- Leaderboard maintains chronological diversity by storing multiple entries per player name up to the 50-entry limit
+- Frontend displays all 50 leaderboard entries as individual records, showing multiple entries with the same player name as separate rows
+- Leaderboard interface handles and displays up to 50 individual entries with proper scrolling or pagination for mobile devices
+- Each leaderboard entry is displayed as a distinct record with its own score, difficulty, and stage information regardless of duplicate player names
+- Leaderboard reliably accepts and displays new entries even when there are already 50 entries stored
+- New high score entries are guaranteed to be saved and displayed in the leaderboard without any failures or data loss
+- Leaderboard system ensures consistent and reliable storage of all qualifying scores regardless of existing entry count
+- **LEADERBOARD NAVIGATION**: Leaderboard page must be accessible from the main menu and provide reliable return navigation
+
+### Enhanced Player Name Filtering System
+- Comprehensive name filter that reliably detects and blocks inappropriate or obscene names when submitting high scores to the leaderboard
+- Filter uses an extensive, case-insensitive list of unique bad words and inappropriate terms
+- Filter prevents saving if a player name contains any blocked words, even as part of a longer word or with character substitutions
+- Filter works for both German and English languages, blocking offensive terms, profanity, and inappropriate content in both languages
+- Filter includes common variations, misspellings, and character substitutions (like numbers for letters) of inappropriate words
+- When a name is rejected by the filter, a clear error message displays in the selected language
+- Error message in German: "Dieser Name ist nicht erlaubt. Bitte wählen Sie einen anderen Namen."
+- Error message in English: "This name is not allowed. Please choose a different name."
+- Score submission is completely blocked until a valid name is entered that passes the comprehensive filter
+- Name input field remains active for correction when filter rejects a name
+- Filter validation occurs when player attempts to submit their score with immediate feedback
+- Clear visual feedback indicates when a name has been rejected with specific error messaging
+- Player must enter an acceptable name before the score can be successfully submitted to the leaderboard
+- Filter is robust enough to catch creative attempts to bypass restrictions while allowing legitimate names
+- Filter system is maintained and updated to ensure continued effectiveness against inappropriate content
+
+### Vibration Feedback System
+- **VIBRATION API INTEGRATION**: Vibration feedback system uses the Web Vibration API to provide tactile feedback on supported smartphones during key in-game events
+- **DEVICE COMPATIBILITY**: Vibration functionality is only activated on devices that support the Web Vibration API with proper feature detection to prevent errors on unsupported devices
+- **FIRING VIBRATION**: Short, sharp vibration pulse (approximately 50-100ms) when the player fires projectiles to provide immediate tactile feedback for shooting actions
+- **DAMAGE VIBRATION**: Medium-intensity vibration pulse (approximately 200-300ms) when the player's spaceship takes damage or is destroyed to emphasize the impact
+- **POWER-UP VIBRATION**: Brief, pleasant vibration pulse (approximately 100-150ms) when the player collects power-ups to provide satisfying tactile confirmation
+- **BOSS DEFEAT VIBRATION**: Longer, more intense vibration pattern (approximately 400-500ms) when boss enemies are defeated to celebrate the significant achievement
+- **EXTRA LIFE VIBRATION**: Special celebratory vibration pattern (approximately 300-400ms) when extra lives are awarded to emphasize the milestone reward
+- **UPGRADE VIBRATION**: Distinctive vibration pattern (approximately 250-350ms) when score-based upgrades or boss victory special upgrades are unlocked
+- **DOPPEL-RAUMSCHIFF VIBRATION**: Unique vibration pattern (approximately 300ms) when "Doppel-Raumschiff" mode is activated or deactivated
+- **ACHIEVEMENT UNLOCK VIBRATION**: Special celebratory vibration pattern (approximately 200-300ms) when achievements are unlocked to emphasize the accomplishment
+- **POINT EARNING VIBRATION**: Brief vibration pulse (approximately 30-50ms) when points are earned to provide tactile feedback for scoring actions
+- **MAGNET POWER-UP VIBRATION**: Distinctive vibration pattern (approximately 150-200ms) when the magnet power-up is collected and activated
+- **ACCESSIBILITY COMPLIANCE**: Vibration system does not interfere with accessibility features and can be disabled if needed for users with sensitivity to vibration
+- **PERFORMANCE OPTIMIZATION**: Vibration feedback is optimized to not impact game performance or cause delays in gameplay responsiveness
+- **BATTERY CONSIDERATION**: Vibration patterns are designed to be brief and efficient to minimize battery drain on mobile devices
+- **FALLBACK HANDLING**: Vibration system includes proper error handling and graceful fallback for devices that don't support the Web Vibration API
+- **USER CONTROL**: Vibration feedback respects device settings and user preferences, working only when vibration is enabled on the device
+- **PATTERN VARIETY**: Different vibration patterns for different events to provide distinct tactile feedback that helps players distinguish between various game events
+- **TIMING ACCURACY**: Vibration feedback is precisely timed to coincide with the corresponding visual and audio events for synchronized sensory feedback
+- **MOBILE FOCUS**: Vibration system is specifically designed for smartphone gameplay and does not activate on desktop devices where vibration is not available
+- **NON-INTRUSIVE DESIGN**: Vibration feedback enhances the gaming experience without being overwhelming or distracting from core gameplay mechanics
+
+### Game States
+- Start screen with compact icon-based tiles that reliably initiate their respective functions
+- **STREAMLINED GAME FLOW**: Play/Start tile bypasses any old menu screens and takes users directly into the game without intermediate screens
+- **COMPLETE OLD MENU REMOVAL**: All remnants of the old menu with large tiles are completely removed from the application
+- Features page accessible from main menu through dedicated icon-based Features tile that provides comprehensive information about the game
+- Achievements page accessible from main menu through dedicated icon-based Achievements tile that provides comprehensive achievement overview
+- Settings page (Einstellungen) accessible from main menu through dedicated icon-based Settings tile
+- Leaderboard page (Bestenliste) accessible from main menu through dedicated icon-based Leaderboard tile
+- Difficulty selection screen or menu option before gameplay begins
+- Enhanced intro sequence state that displays "Bereit!" (German) or "Ready!" (English) text with enhanced visual effects for the duration of the custom start audio plus an additional 2 seconds
+- Stage flag audio state that plays the "Galaga Stage Flag.m4a" audio after the intro sequence and before gameplay begins
+- Active gameplay state that properly loads after intro sequence and stage flag audio complete with full game field and control buttons immediately visible
+- Boss level state that activates every fifth stage with special boss enemy and enhanced combat mechanics featuring unique boss types
+- Level transition state with precise fade effects and next level message display using current language setting while maintaining continuous game loop execution
+- Level transition waits for all enemy explosion animations to complete before beginning
+- Boss level transitions display special messaging indicating upcoming boss battles with ">>> BOSS Level! <<<" announcement
+- Extra life reward state that triggers after every second boss victory (stages 10, 20, 30, 40, etc.) with winner animation and sound effects
+- **VOLUME STATE RESPECT**: Extra life sound effects respect the current volume level set by the volume slider
+- Game over pause state that lasts exactly 3 seconds after all lives are lost, displaying the frozen game state without any user interactions or transitions
+- Outro sequence state that is guaranteed to display after the 3-second game over pause with bulletproof triggering logic, featuring cool sci-fi sound and visible animation for exactly 5 seconds with skip functionality
+- **VOLUME STATE RESPECT**: Outro sci-fi sound respects the current volume level set by the volume slider
+- Outro sequence has robust error handling and multiple validation checks to ensure it never fails to appear
+- Game over screen with final score and restart option in selected language
+- Leaderboard screen accessible from main menu and game over screen with language-appropriate labels
+- Name entry screen for leaderboard submission that only contains the name input field and submit functionality without additional navigation buttons
+- Name input field starts empty without any pre-filled or suggested player names
+- All game state managed in frontend only
+- Proper game initialization sequence to prevent startup failures
+- **MANDATORY UPGRADE STATES**: Enhanced progressive spaceship upgrade state that tracks and applies spectacular visual enhancements after each boss victory with dramatic celebration effects
+- **SCORE-BASED UPGRADE STATES**: Enhanced score-based upgrade state that tracks accumulated points and triggers spectacular special upgrades at 500,000-point intervals with celebratory animations
+- **BOSS VICTORY UPGRADE STATES**: Enhanced boss victory special upgrade state that unlocks animations, particle effects, or "Doppel-Raumschiff" features with highly visible celebration sequences
+- **DOPPEL-RAUMSCHIFF STATES**: Doppel-Raumschiff active state that manages dual ship gameplay and timer countdown with prominent visual effects
+- **NOTIFICATION STATES**: Enhanced special upgrade notification state that displays spectacular celebratory messages when upgrades are unlocked with maximum visual impact
+- **ACHIEVEMENT STATES**: Achievement tracking state that monitors player actions and statistics for achievement progress and unlocking
+- **ACHIEVEMENT UNLOCK STATES**: Achievement unlock state that triggers celebratory notifications and visual effects when achievements are earned
+- **ACHIEVEMENT TILE ANIMATION STATE**: Achievement tile animation state that activates after game sessions when new achievements have been unlocked, providing visual call-to-action feedback
+- **SESSION ACHIEVEMENT TRACKING STATE**: Session-based achievement tracking state that monitors which achievements were earned during the current game session for tile animation triggering
+- **MAGNET POWER-UP STATES**: Magnet power-up active state that manages the 8-second attraction effect and visual feedback
+- **NAVIGATION STATES**: Reliable navigation state management that ensures all routes work correctly and users can access all sections without errors
+
+### Game Initialization and Canvas Display
+- Robust and reliable game startup mechanism that prevents hanging or failure when play button is clicked
+- Game canvas is immediately visible and properly initialized when transitioning from menu to gameplay
+- Canvas element is properly sized and displayed without black screen issues
+- Complete game state reset and initialization when transitioning from menu to gameplay
+- All game variables, objects, and systems properly initialized before gameplay starts
+- Game canvas and rendering context properly set up and visible before first frame
+- Canvas background and game field are immediately rendered and visible to the player
+- Audio system initialized and ready before gameplay begins
+- **VOLUME STATE INITIALIZATION**: Audio system initialization respects the current volume level set by the volume slider
+- Enemy spawning system properly initialized and ready
+- All boss types system properly initialized for boss levels
+- Player spaceship properly positioned and initialized with immediate visual feedback
+- All game loops and timers properly started when gameplay begins with immediate canvas rendering
+- Comprehensive error handling during game initialization to prevent startup failures and black screen issues
+- Game must be fully playable and visually active immediately after successful initialization
+- Clear visual feedback to user during initialization process with proper canvas display
+- Multiple fallback mechanisms in case of initialization issues to ensure canvas visibility
+- Canvas rendering starts immediately upon game initialization to prevent empty or black display
+- Game field background, starfield, and all visual elements render immediately when game starts
+- Proper canvas context validation and recovery mechanisms to ensure reliable rendering
+- Game initialization sequence must be bulletproof and handle all edge cases that could cause black screen or hanging
+- Immediate visual confirmation that the game has started successfully with fully rendered game elements
+- Enhanced progressive spaceship upgrade system properly initialized and ready to track boss victories with spectacular visual effects
+- Enhanced score-based upgrade system properly initialized and ready to track point milestones with celebratory animations
+- Enhanced boss victory special upgrade system properly initialized and ready to provide spectacular rewards
+- Doppel-Raumschiff system properly initialized and ready for activation with dramatic visual effects
+- Achievement system properly initialized and ready to track player actions and unlock achievements
+- Achievement tile animation system properly initialized and ready to track session-based achievement unlocks
+- Magnet power-up system properly initialized and ready to provide attraction effects
+
+### Game Speed Management
+- Game speed remains consistent across all game sessions
+- When player clicks restart button, the game speed resets to the original base speed for selected difficulty
+- Game speed does not accumulate or increase with each restart
+- Complete game state reset ensures consistent gameplay experience identical to Version 3 behavior
+- Base game speed adjusts according to selected difficulty level
+- "Einfach" (Easy) difficulty maintains the original slower game speed for comfortable gameplay experience
+- Progressive spaceship upgrades reset to base appearance when game restarts
+- Score-based upgrades reset when game restarts
+- Boss victory special upgrades reset when game restarts
+- Doppel-Raumschiff mode resets when game restarts
+- Achievement progress and unlocked achievements persist across game restarts
+- Achievement tile animation state resets when game restarts
+
+## Language Selection System
+- Language selection feature allowing users to choose between German and English
+- Language selection available from main menu before starting gameplay
+- Language selection also accessible during gameplay through settings or menu (Einstellungen page)
+- All in-game texts, menus, and UI elements dynamically translate based on selected language
+- Level transition messages display in the selected language with proper localization
+- Boss level announcements and messages display in the selected language
+- Language preference persists across game sessions
+- German is the default language when first launching the application
+- Language selection interface clearly displays both language options
+- Immediate UI update when language is changed without requiring game restart
+- Primary application content language is German
+- Enhanced score-based upgrade notifications display in the selected language with spectacular visual presentation
+- Enhanced boss victory special upgrade notifications display in the selected language with celebratory effects
+- Doppel-Raumschiff activation and deactivation messages display in the selected language with prominent visual feedback
+- Features page content displays in the selected language with comprehensive information about all game mechanics
+- Achievements page content displays in the selected language with comprehensive achievement information
+- Achievement names, descriptions, and unlock notifications display in the selected language
+- Point display notifications and scoring feedback display in the selected language
+- Magnet power-up descriptions and notifications display in the selected language
+
+## Mobile Controls Layout
+- Movement and fire buttons with large image-based icons instead of text labels
+- Left and right movement buttons use large blue arrow icons positioned directly next to each other on the left side of the screen with increased width for better mobile usability
+- Fire button uses the provided `schiessenButtonRot.webp` asset as the fire control button icon, displayed at the correct size and position for optimal touch usability on smartphones
+- Fire button is positioned on the right side of the screen with increased width for better mobile usability
+- **CRITICAL CONTROL BUTTON SIZING**: Control button icons are drawn as large as possible within their respective button tiles, maximizing their size for optimal touch usability on mobile devices
+- **MAXIMUM ICON SCALING**: Left arrow icon is colored blue and scaled to fill the maximum available space within the left button tile without distortion or overflow
+- **MAXIMUM ICON SCALING**: Right arrow icon is colored blue and scaled to fill the maximum available space within the right button tile without distortion or overflow
+- **MAXIMUM ICON SCALING**: Fire button icon uses the `schiessenButtonRot.webp` asset and is scaled to fill the maximum available space within the fire button tile without distortion or overflow
+- **OPTIMAL SPACE UTILIZATION**: All control button icons utilize the full dimensions of their respective button tiles to ensure maximum visibility and touch responsiveness
+- **PROPORTIONAL SCALING**: Control button icons are scaled proportionally to maintain their aspect ratios while maximizing size within each button boundary
+- All control buttons made wider to improve touch interaction and usability on mobile devices
+- Control buttons prevent text selection and accidental highlighting on smartphones to improve touch responsiveness and prevent gameplay interruptions
+- Touch-friendly button sizing for smartphone use
+- Responsive control layout that adapts to different screen sizes
+- Intuitive touch gestures optimized for one-handed or two-handed play
+- Large image-based control buttons (blue arrow icons for left/right movement, `schiessenButtonRot.webp` for shooting) function reliably on smartphones
+- Control button images fill the entire button area and provide clear visual feedback for touch interactions
+- All control buttons are optimized for smartphone touch responsiveness and reliability
+
+## Mobile Optimization
+- Touch-friendly controls for spaceship movement
+- Responsive design that adapts to different screen sizes
+- Optimized performance for mobile browsers
+- Audio performance optimized for mobile devices with reliable playback
+- **VOLUME STATE MOBILE OPTIMIZATION**: Volume level persistence optimized for mobile browsers and devices
+- Visual effects optimized for smooth performance on mobile devices
+- All boss types rendering and effects optimized for mobile performance
+- Winner animation and extra life effects optimized for mobile performance
+- Enhanced progressive spaceship upgrade visuals optimized for mobile performance while maintaining maximum visibility and impact
+- Enhanced score-based upgrade effects optimized for mobile performance while maintaining spectacular visual presentation
+- Enhanced boss victory special upgrade effects optimized for mobile performance while maintaining celebratory visual impact
+- "Doppel-Raumschiff" visual effects optimized for mobile performance while maintaining dramatic visual clarity
+- Doppel-Raumschiff dual ship rendering optimized for mobile performance
+- Enhanced special upgrade particle effects optimized for mobile performance while maintaining maximum visual celebration
+- Animated pulsating star effects optimized for smooth mobile performance without impacting gameplay frame rates
+- Achievement system optimized for mobile performance without impacting gameplay
+- Achievement unlock effects optimized for mobile performance while maintaining celebratory visual impact
+- Achievement tile animation effects optimized for mobile performance without impacting start page responsiveness
+- Point display system optimized for mobile performance without impacting gameplay frame rates
+- Point earning audio optimized for mobile performance with efficient playback
+- Magnet power-up visual effects and attraction mechanics optimized for mobile performance
+
+## User Interface
+- All text and interface elements display in German as the primary application language
+- Game title displays as "GALAGAI" in all visible titles, headings, and text throughout the application in both German and English
+- Score display during gameplay in German with real-time updates
+- Lives indicator displays remaining lives as a numeric value positioned between the score and level indicators
+- Lives display shows the label "Leben" in German or "Lives" in English followed by the numeric value of remaining lives
+- Lives display is positioned between the score display and the level display in the top UI area
+- Lives display shows the exact number of remaining lives as a simple numeric value (e.g., "Leben: 3" or "Lives: 3")
+- Lives display updates correctly as lives are lost or gained during gameplay
+- Lives display is clearly visible and appropriately sized for both desktop and mobile screens
+- Lives display maintains proper spacing and positioning between score and level indicators
+- Lives display uses clear, readable text that contrasts well with the background
+- Lives display features enhanced visual highlighting effects when extra life is awarded to emphasize the "+1" increase with spectacular, unmistakable visual feedback
+- Power-up status indicators showing active effects and remaining duration in German
+- Difficulty selection interface with clear options for "einfach", "mittel", and "schwer"
+- Current difficulty level displayed in game interface
+- Level transition messages in selected language with proper visibility and timing
+- Boss level indicators and announcements in selected language
+- Clean, arcade-style visual design
+- Mobile-first responsive layout
+- **VOLUME SLIDER INTEGRATION**: Volume slider control integrated into the user interface for adjusting all game audio
+- **SYNCHRONIZED VOLUME CONTROLS**: Volume slider maintains synchronized state between start page and in-game settings
+- Reliable start button functionality that ensures game becomes fully playable with immediate canvas visibility
+- Leaderboard interface with German labels and formatting
+- Language selection interface integrated into main menu and settings
+- Features page interface with comprehensive game information in the selected language
+- Achievements page interface with comprehensive achievement information in the selected language
+- Settings page interface with all configuration options in the selected language
+- Enhanced score-based upgrade notifications with spectacular German language text, bright backgrounds, and celebratory particle effects
+- Enhanced boss victory special upgrade notifications with dramatic German language text and highly visible celebration effects
+- Enhanced visual indicators for active special upgrades and "Doppel-Raumschiff" features with maximum visibility and prominence
+- Doppel-Raumschiff timer display showing remaining duration when mode is active with clear, prominent visual presentation
+- Enhanced special upgrade status indicators showing active enhancements and effects with spectacular visual feedback
+- Enhanced celebratory upgrade unlock notifications with prominent German language messaging, bright colors, and maximum visual impact
+- Achievement unlock notifications with prominent display in the selected language with celebratory visual effects
+- Achievement progress indicators and status displays in the selected language
+- **REAL-TIME POINT DISPLAY**: Point display system integrated into the UI showing animated point values at destruction locations and real-time score updates in the info area
+- **MAGNET POWER-UP UI INDICATORS**: Visual indicators showing when magnet power-up is active, including timer display and visual effects
+- **ACHIEVEMENT TILE ANIMATION UI**: Achievement tile on the start page includes animation system that provides visual call-to-action feedback when new achievements are unlocked during game sessions
+
+## Menu and Settings Interface Control
+- Difficulty selection buttons are hidden during active gameplay
+- Language selection buttons are hidden during active gameplay
+- Difficulty and language selection buttons are only visible in the main menu and outside of the actual game
+- Settings and configuration options are accessible only when not in active gameplay state
+- Clean gameplay interface without configuration distractions during play
+- Full access to all settings and options when in menu states
+- Features page accessible from main menu through dedicated icon-based "Features" tile
+- Achievements page accessible from main menu through dedicated icon-based "Achievements" tile
+- Settings page accessible from main menu through dedicated icon-based "Settings" tile
+- Leaderboard page accessible from main menu through dedicated icon-based "Leaderboard" tile
+
+## Footer Layout Optimization
+- Footer containing "caffeine.ai" branding and attribution text is positioned to never overlap or cover any control buttons or interactive elements on smartphones
+- **LANGUAGE-DEPENDENT ATTRIBUTION**: Footer attribution text displays "durch j_marques" in German and "by j_marques" in English, depending on the selected language
+- **CONSISTENT LANGUAGE SWITCHING**: Footer attribution text switches language consistently across all pages (StartPage, FeaturesPage, LeaderboardPage, AchievementsPage, etc.) and matches the current app language setting
+- Footer layout ensures all game control buttons remain fully visible and easily accessible on all screen sizes
+- Footer positioning adapts responsively to different screen sizes to maintain clear separation from interactive elements
+- Footer does not interfere with touch interaction areas for movement and fire buttons
+- Footer placement optimized specifically for mobile viewport constraints to prevent UI element conflicts
+- Footer remains visible for branding purposes while maintaining optimal usability of all game controls
+- Footer positioning is dynamically adjusted based on screen size to ensure complete visibility of all interactive elements
+- Footer layout prevents any overlap with control buttons across all smartphone screen dimensions and orientations
+- Footer maintains proper spacing and positioning to guarantee full accessibility of all game controls on every device size
+- Footer displays both "caffeine.ai" branding and language-appropriate attribution text clearly and visibly without overlapping any content or controls
+- Footer attribution text is clearly visible and does not interfere with any game functionality on both mobile and desktop views
+
+## Data Persistence
+- High scores stored in backend for persistence across sessions
+- Backend stores player high scores with timestamps, player identifiers, difficulty level, and reached stage for each score
+- Backend provides functionality to retrieve top 50 scores for leaderboard display including difficulty and stage information
+- Player scores and leaderboard data persisted across all game sessions
+- Language preference stored locally in frontend for persistence across sessions
+- Difficulty preference stored locally in frontend for persistence across sessions
+- **VOLUME STATE PERSISTENCE**: Volume preference stored locally in frontend for persistence across sessions and page reloads
+- **ACHIEVEMENT PERSISTENCE**: Unlocked achievements stored in backend for persistence across sessions and devices for registered users
+- **ACHIEVEMENT PROGRESS PERSISTENCE**: Achievement progress and statistics stored in backend for continuous tracking across sessions for registered users
+- **SESSION ACHIEVEMENT TRACKING**: Session-based achievement tracking data stored locally to determine when achievement tile animation should be triggered
+
+## Backend Operations
+- Store and retrieve high score data with player identifiers, difficulty level information, and reached stage
+- Manage global leaderboard functionality with ranking system including difficulty level and reached stage data
+- Provide leaderboard data retrieval for frontend display with top 50 scores including difficulty level and reached stage information
+- Handle score submission and validation including difficulty level and reached stage validation
+- Store difficulty level ("einfach", "mittel", "schwer") and reached stage alongside each submitted score
+- Accept stage parameter in score submission function to store the stage reached when the game ended
+- Backend configured to return the top 50 highest scores when leaderboard data is requested
+- **CRITICAL BACKEND LEADERBOARD IMPROVEMENTS**: Backend leaderboard system must be thoroughly reviewed and improved to ensure bulletproof reliability for all score submission scenarios
+- **ENHANCED ERROR HANDLING**: Backend must include comprehensive error handling, logging, and validation for all leaderboard operations to prevent any submission failures
+- **ROBUST TRANSACTION MANAGEMENT**: Backend database operations must use proper transaction management and rollback mechanisms to ensure data integrity during score submissions
+- **BULLETPROOF INSERTION LOGIC**: Backend score insertion logic must be bulletproof and handle all edge cases including concurrent submissions, database constraints, and existing entry conflicts
+- **COMPREHENSIVE TESTING**: Backend leaderboard functionality must be thoroughly tested with stress testing, concurrent submissions, and edge case scenarios to ensure reliability
+- **PERFORMANCE OPTIMIZATION**: Backend operations must be optimized for performance while maintaining reliability and preventing any data loss or corruption
+- **FAILSAFE MECHANISMS**: Backend must include multiple failsafe mechanisms and redundancy to ensure score submissions never fail due to technical issues
+- **DATA VALIDATION**: Backend must include comprehensive data validation and sanitization for all score submission parameters
+- **CONCURRENT ACCESS HANDLING**: Backend must properly handle concurrent access and prevent race conditions during score submissions
+- **DATABASE CONSTRAINT MANAGEMENT**: Backend must properly handle database constraints and prevent any constraint violations that could cause submission failures
+- Backend allows multiple entries from the same player name without overwriting previous entries
+- Up to 50 total entries are permanently stored, allowing multiple scores from the same player to coexist in the leaderboard
+- Each score submission creates a new leaderboard entry regardless of whether the player name already exists
+- Previous scores from the same player name are preserved and not replaced when new scores are submitted
+- Leaderboard maintains chronological diversity by storing multiple entries per player name up to the 50-entry limit
+- Frontend displays all 50 leaderboard entries as individual records, showing multiple entries with the same player name as separate rows
+- Leaderboard interface handles and displays up to 50 individual entries with proper scrolling or pagination for mobile devices
+- Each leaderboard entry is displayed as a distinct record with its own score, difficulty, and stage information regardless of duplicate player names
+- Leaderboard reliably accepts and displays new entries even when there are already 50 entries stored
+- New high score entries are guaranteed to be saved and displayed in the leaderboard without any failures or data loss
+- Leaderboard system ensures consistent and reliable storage of all qualifying scores regardless of existing entry count
+- Backend implements robust score insertion logic that guarantees every new score submission will be saved and processed
+- Backend leaderboard logic ensures that multiple high scores from the same player can all be preserved in the top 50 list
+- Backend score storage system treats each submission as a unique entry with its own timestamp, score, difficulty, and stage data
+- Backend implements a bulletproof leaderboard management system that ensures new entries are reliably saved even when there are already 50 entries
+- Backend leaderboard operations include comprehensive error handling and validation to prevent any data loss during score submission
+- Backend guarantees that the leaderboard will always accept new score submissions and maintain exactly 50 entries through automatic lowest-score removal
+- Comprehensive player name filtering and validation system that reliably prevents obscene or inappropriate words in both German and English
+- Backend maintains an extensive, case-insensitive list of inappropriate terms, profanity, and offensive content for both languages
+- Backend validates player names against the comprehensive filter list before accepting score submissions
+- Backend rejects score submissions with inappropriate names and returns specific validation error messages
+- Backend filter catches variations, misspellings, character substitutions, and creative attempts to bypass restrictions
+- Backend name filter is robust enough to detect inappropriate content even when embedded within longer words
+- Backend ensures only appropriate and acceptable names are stored in the leaderboard system
+- **ACHIEVEMENT BACKEND OPERATIONS**: Store and retrieve achievement data including unlock status, progress, and timestamps for each registered user
+- **ACHIEVEMENT DATA MANAGEMENT**: Backend manages achievement unlock status, progress tracking, and completion statistics for persistent achievement system for registered users
+- **ACHIEVEMENT PERSISTENCE**: Backend ensures achievement data persists across sessions and devices with reliable storage and retrieval for registered users
+- **ACHIEVEMENT VALIDATION**: Backend validates achievement unlock conditions and prevents duplicate or invalid achievement unlocks
+- **ACHIEVEMENT STATISTICS**: Backend tracks and stores achievement-related statistics including completion rates and unlock timestamps for registered users
+- **CRITICAL BOSS TYPE TRACKING**: Backend tracks which specific boss types have been defeated by each registered user for the Boss Master achievement with comprehensive tracking logic
+- **BOSS MASTER ACHIEVEMENT LOGIC**: Backend properly validates and unlocks the Boss Master achievement when a registered user defeats 5 different boss types with bulletproof validation and immediate unlocking
+- **BOSS MASTER BACKEND TESTING**: Backend Boss Master achievement logic must be thoroughly tested to ensure it correctly tracks unique boss defeats and reliably unlocks the achievement for registered users
+- **REGISTERED USER ACHIEVEMENT SYSTEM**: Achievement system must be fully integrated with user registration and authentication to ensure achievements are properly tracked and persisted for registered users only
+- **ACHIEVEMENT USER ASSOCIATION**: All achievement data must be properly associated with registered user accounts to ensure achievements persist across sessions and devices
+- **ACHIEVEMENT AUTHENTICATION**: Achievement tracking and unlocking must be properly authenticated to ensure only registered users can earn and maintain persistent achievements
+- No real-time game state storage (all active gameplay in frontend)
